@@ -70,8 +70,8 @@ A professional website for mobile repair businesses featuring universal parts co
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/rk83783/mobilefixpro-universal.git
-cd mobilefixpro-universal
+git clone https://github.com/rk83783/universalmobile-parts.git
+cd universalmobile-parts
 ```
 
 2. Open with a local server:
@@ -90,7 +90,7 @@ npx serve
 ## 📁 **Project Structure**
 
 ```
-mobilefixpro-universal/
+universalmobile-parts/
 ├── index.html              # Homepage
 ├── products.html           # Products catalog
 ├── contact.html            # Contact form
@@ -156,7 +156,7 @@ mobilefixpro-universal/
 
 - **WhatsApp**: +91 7205702493
 - **Email**: support@mobilefixpro.com
-- **Website**: [MobileFix Pro](https://github.com/rk83783/mobilefixpro-universal)
+- **Website**: [Universal Mobile Parts](https://github.com/rk83783/universalmobile-parts)
 
 ## 📄 **License**
 
