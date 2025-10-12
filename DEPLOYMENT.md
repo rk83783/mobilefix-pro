@@ -5,7 +5,7 @@
 ### Quick Deploy
 1. Visit [Vercel Dashboard](https://vercel.com/dashboard)
 2. Click "New Project"
-3. Import from GitHub: `https://github.com/rk83783/mobilefix-pro`
+3. Import from GitHub: `https://github.com/rk83783/mobilefixpro-universal`
 4. Deploy automatically
 
 ### Project Configuration

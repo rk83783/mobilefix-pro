@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "mobilefix-pro",
+  "name": "mobilefixpro-universal",
   "builds": [
     {
       "src": "index.html",

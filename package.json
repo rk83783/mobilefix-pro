@@ -1,5 +1,5 @@
 {
-  "name": "mobilefix-pro",
+  "name": "mobilefixpro-universal",
   "version": "1.0.0",
   "description": "Professional mobile repair website with universal parts compatibility database",
   "main": "index.html",
@@ -21,11 +21,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rk83783/mobilefix-pro.git"
+    "url": "https://github.com/rk83783/mobilefixpro-universal.git"
   },
-  "homepage": "https://github.com/rk83783/mobilefix-pro#readme",
+  "homepage": "https://github.com/rk83783/mobilefixpro-universal#readme",
   "bugs": {
-    "url": "https://github.com/rk83783/mobilefix-pro/issues"
+    "url": "https://github.com/rk83783/mobilefixpro-universal/issues"
   },
   "engines": {
     "node": ">=14.0.0"
