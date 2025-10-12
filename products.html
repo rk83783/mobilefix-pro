@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - MobileFix Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>MobileFix Pro</span>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link active">Products</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="admin.html" class="nav-link">Admin</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></button>
+                    <button class="membership-btn">Get Membership</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Hero -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Universal Mobile Parts Catalog</h1>
+            <p>Professional quality parts compatible with 1500+ mobile models</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="display">Displays</option>
+                        <option value="battery">Batteries</option>
+                        <option value="charging">Charging Components</option>
+                        <option value="cover">Back Covers</option>
+                        <option value="frame">Frames</option>
+                        <option value="glass">Glass Guards</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Brand:</label>
+                    <select id="brandFilter">
+                        <option value="">All Brands</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="iphone">iPhone</option>
+                        <option value="redmi">Redmi</option>
+                        <option value="vivo">Vivo</option>
+                        <option value="oppo">Oppo</option>
+                        <option value="realme">Realme</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Price Range:</label>
+                    <select id="priceFilter">
+                        <option value="">All Prices</option>
+                        <option value="0-500">₹0 - ₹500</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000-2000">₹1000 - ₹2000</option>
+                        <option value="2000+">₹2000+</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <input type="text" id="searchProducts" placeholder="Search products...">
+                </div>
+                
+                <button class="clear-filters">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2>Available Products</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th-large"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn" id="prevPage" disabled>Previous</button>
+                <div class="pagination-numbers" id="paginationNumbers"></div>
+                <button class="pagination-btn" id="nextPage">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="product-images">
+                    <img id="modalMainImage" src="" alt="">
+                    <div class="product-thumbnails" id="modalThumbnails"></div>
+                </div>
+                <div class="product-details">
+                    <h2 id="modalTitle"></h2>
+                    <div class="product-rating">
+                        <div class="stars" id="modalRating"></div>
+                        <span class="rating-count" id="modalRatingCount"></span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price" id="modalPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                    </div>
+                    <div class="product-description" id="modalDescription"></div>
+                    <div class="product-compatibility">
+                        <h4>Compatible Models:</h4>
+                        <div class="compatibility-list" id="modalCompatibility"></div>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="modalQuantity" value="1" min="1" max="10">
+                            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" id="modalAddToCart">Add to Cart</button>
+                        <button class="buy-now-btn" id="modalBuyNow">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>MobileFix Pro</span>
+                    </div>
+                    <p>Your trusted partner for universal mobile repair solutions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#displays">Universal Displays</a></li>
+                        <li><a href="#batteries">Universal Batteries</a></li>
+                        <li><a href="#charging">Charging Components</a></li>
+                        <li><a href="#covers">Back Covers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">WhatsApp Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">How to Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MobileFix Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
