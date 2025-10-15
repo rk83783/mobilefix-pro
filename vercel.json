@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "universalmobile-parts",
+  "name": "mobilefix-pro",
   "builds": [
     {
       "src": "index.html",
