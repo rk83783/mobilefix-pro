@@ -1,5 +1,7 @@
 {
-  "name": "mobilefix-pro-rk83783",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
