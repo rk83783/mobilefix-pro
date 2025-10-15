@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "mobilefix-pro-rk83783",
+  "name": "mobilefix-pro",
   "builds": [
     {
       "src": "index.html",
@@ -13,6 +13,11 @@
       "dest": "/$1"
     }
   ],
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
