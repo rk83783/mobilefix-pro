@@ -1,5 +1,6 @@
 // Products data (in a real app, this would come from an API)
 const productsData = [
+    // Displays
     {
         id: 1,
         title: "Universal OLED Display - Premium Quality",
@@ -21,6 +22,65 @@ const productsData = [
         badge: "Premium"
     },
     {
+        id: 7,
+        title: "AMOLED Display Assembly - Vivo",
+        category: "display",
+        brand: "vivo",
+        price: 1599,
+        originalPrice: 1899,
+        description: "Original quality AMOLED display assembly with touch digitizer. Perfect color reproduction and response.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=AMOLED+Vivo",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=AMOLED+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=AMOLED+2"
+        ],
+        rating: 4.6,
+        reviews: 74,
+        compatibility: ["Vivo V21", "Vivo V20", "Vivo X60", "Vivo Y20"],
+        inStock: true,
+        badge: "AMOLED"
+    },
+    {
+        id: 9,
+        title: "iPhone 13 Pro Max OLED Display",
+        category: "display",
+        brand: "iphone",
+        price: 2499,
+        originalPrice: 2999,
+        description: "Premium OLED display for iPhone 13 Pro Max. True tone technology with ProMotion 120Hz refresh rate.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=iPhone+Display",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=iPhone+Display+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=iPhone+Display+2"
+        ],
+        rating: 4.8,
+        reviews: 245,
+        compatibility: ["iPhone 13 Pro Max"],
+        inStock: true,
+        badge: "ProMotion"
+    },
+    {
+        id: 10,
+        title: "Realme LCD Display Universal",
+        category: "display",
+        brand: "realme",
+        price: 899,
+        originalPrice: 1199,
+        description: "High-quality LCD display compatible with multiple Realme models. Excellent color accuracy and brightness.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Realme+Display",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Realme+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Realme+2"
+        ],
+        rating: 4.3,
+        reviews: 98,
+        compatibility: ["Realme 7", "Realme 8", "Realme 9", "Realme Narzo 30"],
+        inStock: true,
+        badge: "Universal"
+    },
+    
+    // Batteries
+    {
         id: 2,
         title: "Universal Li-ion Battery 4000mAh",
         category: "battery",
@@ -39,6 +99,65 @@ const productsData = [
         inStock: true,
         badge: "Popular"
     },
+    {
+        id: 8,
+        title: "Fast Charging Battery - Oppo",
+        category: "battery",
+        brand: "oppo",
+        price: 699,
+        originalPrice: 899,
+        description: "Fast charging compatible battery with BLP technology. Extended lifespan and safety features included.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Oppo+Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Oppo+Bat+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Oppo+Bat+2"
+        ],
+        rating: 4.3,
+        reviews: 115,
+        compatibility: ["Oppo F19", "Oppo A74", "Oppo Reno 6", "Oppo A54"],
+        inStock: true,
+        badge: "Fast Charge"
+    },
+    {
+        id: 11,
+        title: "iPhone Battery 3500mAh Premium",
+        category: "battery",
+        brand: "iphone",
+        price: 1299,
+        originalPrice: 1599,
+        description: "Premium replacement battery for iPhone with high capacity. Includes battery health monitoring.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=iPhone+Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=iPhone+Bat+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=iPhone+Bat+2"
+        ],
+        rating: 4.7,
+        reviews: 187,
+        compatibility: ["iPhone 12", "iPhone 12 Pro"],
+        inStock: true,
+        badge: "Premium"
+    },
+    {
+        id: 12,
+        title: "Samsung 5000mAh Battery Pack",
+        category: "battery",
+        brand: "samsung",
+        price: 799,
+        originalPrice: 999,
+        description: "High-capacity 5000mAh battery for Samsung devices. Long-lasting performance with safety certifications.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Samsung+Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Sam+Bat+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Sam+Bat+2"
+        ],
+        rating: 4.4,
+        reviews: 156,
+        compatibility: ["Galaxy M31", "Galaxy M51", "Galaxy F41", "Galaxy A51"],
+        inStock: true,
+        badge: "5000mAh"
+    },
+    
+    // Charging
     {
         id: 3,
         title: "USB-C Charging Port Module",
@@ -59,6 +178,46 @@ const productsData = [
         badge: "Universal"
     },
     {
+        id: 13,
+        title: "Lightning Port Module - iPhone",
+        category: "charging",
+        brand: "iphone",
+        price: 499,
+        originalPrice: 699,
+        description: "Premium Lightning port module for iPhone. Original quality with fast charging support.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Lightning+Port",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Lightning+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Lightning+2"
+        ],
+        rating: 4.5,
+        reviews: 203,
+        compatibility: ["iPhone 11", "iPhone SE", "iPhone 8", "iPhone X"],
+        inStock: true,
+        badge: "Original"
+    },
+    {
+        id: 14,
+        title: "Micro USB Charging Flex Cable",
+        category: "charging",
+        brand: "universal",
+        price: 199,
+        originalPrice: 299,
+        description: "Universal Micro USB charging flex cable. Compatible with older Android models.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Micro+USB",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Micro+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Micro+2"
+        ],
+        rating: 3.9,
+        reviews: 45,
+        compatibility: ["Samsung J7", "Moto G5", "Redmi 4A", "Nokia 6"],
+        inStock: true,
+        badge: "Budget"
+    },
+    
+    // Covers
+    {
         id: 4,
         title: "Premium Back Cover - Clear Design",
         category: "cover",
@@ -77,6 +236,46 @@ const productsData = [
         inStock: true,
         badge: "Clear"
     },
+    {
+        id: 15,
+        title: "Samsung Back Glass Panel",
+        category: "cover",
+        brand: "samsung",
+        price: 449,
+        originalPrice: 599,
+        description: "Original quality back glass panel for Samsung flagship models. Premium finish with camera cutouts.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Samsung+Back",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Sam+Back+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Sam+Back+2"
+        ],
+        rating: 4.6,
+        reviews: 134,
+        compatibility: ["Galaxy S21", "Galaxy S20", "Galaxy Note 20"],
+        inStock: true,
+        badge: "Original"
+    },
+    {
+        id: 16,
+        title: "Universal Back Cover - Matte Black",
+        category: "cover",
+        brand: "universal",
+        price: 299,
+        originalPrice: 399,
+        description: "Universal matte black back cover. Fingerprint resistant with premium feel.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Matte+Cover",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Matte+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Matte+2"
+        ],
+        rating: 4.1,
+        reviews: 89,
+        compatibility: ["Redmi Note 10", "Realme 8", "Vivo V20", "Oppo F19"],
+        inStock: true,
+        badge: "Matte"
+    },
+    
+    // Frames
     {
         id: 5,
         title: "Universal Metal Frame - Space Gray",
@@ -97,6 +296,27 @@ const productsData = [
         badge: "Premium"
     },
     {
+        id: 17,
+        title: "Middle Frame - Samsung Galaxy",
+        category: "frame",
+        brand: "samsung",
+        price: 699,
+        originalPrice: 899,
+        description: "Middle frame chassis for Samsung Galaxy. Includes all mounting points and antenna lines.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Middle+Frame",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Mid+Frame+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Mid+Frame+2"
+        ],
+        rating: 4.5,
+        reviews: 76,
+        compatibility: ["Galaxy S21", "Galaxy S20 FE", "Galaxy A52"],
+        inStock: true,
+        badge: "Complete"
+    },
+    
+    // Glass Guards
+    {
         id: 6,
         title: "Tempered Glass Screen Protector",
         category: "glass",
@@ -116,42 +336,61 @@ const productsData = [
         badge: "9H"
     },
     {
-        id: 7,
-        title: "AMOLED Display Assembly - Vivo",
-        category: "display",
-        brand: "vivo",
-        price: 1599,
-        originalPrice: 1899,
-        description: "Original quality AMOLED display assembly with touch digitizer. Perfect color reproduction and response.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=AMOLED+Vivo",
+        id: 18,
+        title: "Privacy Tempered Glass - iPhone",
+        category: "glass",
+        brand: "iphone",
+        price: 299,
+        originalPrice: 399,
+        description: "Privacy screen protector for iPhone. Blocks side viewing angles while maintaining clarity.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Privacy+Glass",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=AMOLED+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=AMOLED+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Privacy+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Privacy+2"
         ],
-        rating: 4.6,
-        reviews: 74,
-        compatibility: ["Vivo V21", "Vivo V20", "Vivo X60", "Vivo Y20"],
+        rating: 4.4,
+        reviews: 167,
+        compatibility: ["iPhone 14", "iPhone 13", "iPhone 12"],
         inStock: true,
-        badge: "AMOLED"
+        badge: "Privacy"
     },
     {
-        id: 8,
-        title: "Fast Charging Battery - Oppo",
-        category: "battery",
-        brand: "oppo",
-        price: 699,
-        originalPrice: 899,
-        description: "Fast charging compatible battery with BLP technology. Extended lifespan and safety features included.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Oppo+Battery",
+        id: 19,
+        title: "Full Coverage Glass - Curved Edge",
+        category: "glass",
+        brand: "samsung",
+        price: 399,
+        originalPrice: 549,
+        description: "Full coverage curved edge tempered glass. Perfect fit for curved displays with UV adhesive.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Curved+Glass",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Oppo+Bat+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Oppo+Bat+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Curved+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Curved+2"
         ],
-        rating: 4.3,
-        reviews: 115,
-        compatibility: ["Oppo F19", "Oppo A74", "Oppo Reno 6", "Oppo A54"],
+        rating: 4.7,
+        reviews: 234,
+        compatibility: ["Galaxy S21", "Galaxy S20", "Galaxy Note 20"],
         inStock: true,
-        badge: "Fast Charge"
+        badge: "Curved"
+    },
+    {
+        id: 20,
+        title: "Anti-Blue Light Screen Protector",
+        category: "glass",
+        brand: "universal",
+        price: 249,
+        originalPrice: 349,
+        description: "Anti-blue light tempered glass. Reduces eye strain during prolonged use.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Blue+Light",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Blue+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Blue+2"
+        ],
+        rating: 4.2,
+        reviews: 143,
+        compatibility: ["Universal fit", "Most smartphones"],
+        inStock: true,
+        badge: "Eye Care"
     }
 ];
 
@@ -184,7 +423,28 @@ const cartCount = document.querySelector('.cart-count');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    renderProducts();
+    // Get URL parameters and apply filters
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    const categoryParam = urlParams.get('category');
+    
+    if (searchParam) {
+        searchProducts.value = searchParam;
+        currentFilters.search = searchParam.toLowerCase();
+    }
+    
+    if (categoryParam) {
+        categoryFilter.value = categoryParam;
+        currentFilters.category = categoryParam;
+    }
+    
+    // Apply initial filters if any
+    if (searchParam || categoryParam) {
+        applyFilters();
+    } else {
+        renderProducts();
+    }
+    
     updateCartCount();
     setupEventListeners();
 });

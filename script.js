@@ -35,10 +35,8 @@ document.querySelector('.search-submit').addEventListener('click', performSearch
 function performSearch() {
     const query = searchInput.value.trim();
     if (query) {
-        // Here you can implement actual search functionality
-        console.log('Searching for:', query);
-        // For demo purposes, show an alert
-        alert(`Searching for: "${query}"\n\nThis would typically filter products or redirect to search results.`);
+        // Redirect to products page with search query
+        window.location.href = `products.html?search=${encodeURIComponent(query)}`;
         searchModal.style.display = 'none';
     }
 }
@@ -94,21 +92,30 @@ document.querySelectorAll('.category-card').forEach(card => {
 // Button click handlers
 document.querySelectorAll('.category-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-        const categoryName = e.target.closest('.category-card').querySelector('h3').textContent;
-        alert(`Opening ${categoryName} catalog...\n\nThis would typically navigate to the category page.`);
+        const categoryCard = e.target.closest('.category-card');
+        const categoryTitle = categoryCard.querySelector('h3').textContent;
+        let category = '';
+        
+        // Map category names to filter values
+        if (categoryTitle.includes('Display')) category = 'display';
+        else if (categoryTitle.includes('Batter')) category = 'battery';
+        else if (categoryTitle.includes('Charging')) category = 'charging';
+        else if (categoryTitle.includes('Cover')) category = 'cover';
+        else if (categoryTitle.includes('Frame')) category = 'frame';
+        else if (categoryTitle.includes('Glass')) category = 'glass';
+        
+        window.location.href = `products.html?category=${category}`;
     });
 });
 
 // Membership button
 document.querySelector('.membership-cta').addEventListener('click', () => {
-    alert('Redirecting to payment page...\n\nThis would typically open the membership purchase flow.');
+    showMembershipModal();
 });
 
 // CTA buttons
 document.querySelector('.cta-primary').addEventListener('click', () => {
-    document.querySelector('#categories').scrollIntoView({
-        behavior: 'smooth'
-    });
+    window.location.href = 'products.html';
 });
 
 document.querySelector('.cta-secondary').addEventListener('click', () => {
@@ -117,14 +124,12 @@ document.querySelector('.cta-secondary').addEventListener('click', () => {
 
 // Login button
 document.querySelector('.login-btn').addEventListener('click', () => {
-    alert('Opening login modal...\n\nThis would typically show a login form.');
+    window.location.href = 'login.html';
 });
 
 // Membership button in header
 document.querySelector('.membership-btn').addEventListener('click', () => {
-    document.querySelector('.membership').scrollIntoView({
-        behavior: 'smooth'
-    });
+    showMembershipModal();
 });
 
 // Intersection Observer for animations
@@ -389,6 +394,144 @@ function lazyLoadImages() {
 
 // Initialize lazy loading
 lazyLoadImages();
+
+// Membership Modal Functionality
+function showMembershipModal() {
+    const modalHTML = `
+        <div id="membershipModal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+            <div style="background: white; border-radius: 1rem; padding: 3rem; max-width: 500px; width: 100%; position: relative;">
+                <button onclick="closeMembershipModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 2rem; color: #a0aec0; cursor: pointer;">&times;</button>
+                
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 3rem; color: #96A78D; margin-bottom: 1rem;"><i class="fas fa-crown"></i></div>
+                    <h2 style="font-size: 2rem; font-weight: 700; color: #2d3748; margin-bottom: 0.5rem;">Get Lifetime Membership</h2>
+                    <p style="color: #4a5568;">Unlock unlimited access to our universal parts database</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #B6CEB4 0%, #96A78D 100%); border-radius: 1rem; padding: 2rem; text-align: center; margin-bottom: 2rem;">
+                    <div style="color: white; font-size: 3rem; font-weight: 700;">₹30</div>
+                    <div style="color: white; opacity: 0.9;">One-time payment • Lifetime access</div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #2d3748; margin-bottom: 1rem;">What's included:</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #48bb78;"></i>
+                            <span style="color: #4a5568;">Access to 1500+ mobile models database</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #48bb78;"></i>
+                            <span style="color: #4a5568;">190+ universal parts catalog</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #48bb78;"></i>
+                            <span style="color: #4a5568;">Weekly database updates</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #48bb78;"></i>
+                            <span style="color: #4a5568;">24/7 WhatsApp support</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: #48bb78;"></i>
+                            <span style="color: #4a5568;">Priority customer service</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #2d3748; margin-bottom: 0.75rem;">Payment Method:</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <label style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 0.5rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="paymentMethod" value="upi" checked>
+                            <i class="fas fa-mobile-alt" style="font-size: 1.5rem; color: #96A78D;"></i>
+                            <span style="font-size: 0.875rem; font-weight: 600;">UPI</span>
+                        </label>
+                        <label style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 0.5rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                            <input type="radio" name="paymentMethod" value="card">
+                            <i class="fas fa-credit-card" style="font-size: 1.5rem; color: #96A78D;"></i>
+                            <span style="font-size: 0.875rem; font-weight: 600;">Card</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button onclick="processMembershipPayment()" style="width: 100%; padding: 1.25rem; background: linear-gradient(135deg, #96A78D 0%, #7a8c70 100%); color: white; border: none; border-radius: 0.75rem; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-lock"></i> Proceed to Payment
+                </button>
+                
+                <div style="text-align: center; margin-top: 1rem; color: #4a5568; font-size: 0.875rem;">
+                    <i class="fas fa-shield-alt" style="color: #48bb78;"></i> Secure payment • 30-day money-back guarantee
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMembershipModal() {
+    const modal = document.getElementById('membershipModal');
+    if (modal) {
+        modal.remove();
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function processMembershipPayment() {
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+    
+    // Simulate payment processing
+    const button = event.target;
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    
+    setTimeout(() => {
+        // Store membership
+        const membership = {
+            id: 'MEM' + Math.random().toString(36).substr(2, 9).toUpperCase(),
+            purchaseDate: new Date().toISOString(),
+            amount: 30,
+            paymentMethod: paymentMethod,
+            status: 'active'
+        };
+        
+        localStorage.setItem('membership', JSON.stringify(membership));
+        
+        // Show success
+        closeMembershipModal();
+        showMembershipSuccess(membership.id);
+    }, 2000);
+}
+
+function showMembershipSuccess(membershipId) {
+    const successHTML = `
+        <div id="membershipSuccess" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+            <div style="background: white; border-radius: 1rem; padding: 3rem; max-width: 500px; text-align: center;">
+                <div style="font-size: 4rem; color: #48bb78; margin-bottom: 1rem;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #2d3748; margin-bottom: 1rem;">Welcome to MobileFix Pro!</h2>
+                <p style="color: #4a5568; margin-bottom: 1rem;">Your membership is now active</p>
+                <p style="color: #4a5568; margin-bottom: 2rem;">Membership ID: <strong>${membershipId}</strong></p>
+                <button onclick="closeMembershipSuccess()" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, #96A78D 0%, #7a8c70 100%); color: white; border: none; border-radius: 0.75rem; font-weight: 600; cursor: pointer;">
+                    Start Exploring
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', successHTML);
+}
+
+function closeMembershipSuccess() {
+    const modal = document.getElementById('membershipSuccess');
+    if (modal) {
+        modal.remove();
+        document.body.style.overflow = 'auto';
+        window.location.href = 'products.html';
+    }
+}
 
 console.log('🚀 MobileFix Pro website loaded successfully!');
 console.log('💡 Press Ctrl/Cmd + K to open search');

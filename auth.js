@@ -229,7 +229,7 @@ function togglePassword(fieldId) {
     }
 }
 
-// Login handling
+// Login handling with backend integration
 async function handleLogin(e) {
     e.preventDefault();
     
@@ -253,18 +253,20 @@ async function handleLogin(e) {
         // Simulate API call
         await simulateApiCall(1500);
         
-        // For demo purposes, accept any email/password combination
-        const user = {
-            id: generateId(),
-            email: loginData.email,
-            firstName: loginData.email.split('@')[0],
-            lastName: 'User',
-            loginTime: new Date().toISOString(),
-            isAdmin: loginData.email.includes('admin')
-        };
+        // Use backend API for login
+        const result = window.backendAPI.loginUser(loginData.email, loginData.password);
+        
+        if (!result.success) {
+            throw new Error(result.error);
+        }
+        
+        const user = result.user;
         
         // Store user session
         storeUserSession(user, loginData.remember);
+        
+        // Log activity
+        window.backendAPI.logAdminActivity('user_login', `${user.email} logged in`);
         
         // Show success and redirect
         showSuccess('Login Successful!', 'Welcome back! Redirecting to your dashboard...');
@@ -274,13 +276,13 @@ async function handleLogin(e) {
         }, 2000);
         
     } catch (error) {
-        showError(document.getElementById('loginPasswordError'), 'Invalid email or password');
+        showError(document.getElementById('loginPasswordError'), error.message || 'Invalid email or password');
     } finally {
         setLoadingState(submitBtn, false);
     }
 }
 
-// Register handling
+// Register handling with backend integration
 async function handleRegister(e) {
     e.preventDefault();
     
@@ -310,17 +312,15 @@ async function handleRegister(e) {
         // Simulate API call
         await simulateApiCall(2000);
         
-        // Create user object
-        const user = {
-            id: generateId(),
-            ...registerData,
-            registrationDate: new Date().toISOString(),
-            isAdmin: false,
-            membershipStatus: 'pending'
-        };
+        // Use backend API for registration
+        const result = window.backendAPI.registerUser(registerData);
         
-        // Store user data
-        storeUserData(user);
+        if (!result.success) {
+            throw new Error(result.error);
+        }
+        
+        // Log activity
+        window.backendAPI.logAdminActivity('user_register', `New user registered: ${registerData.email}`);
         
         // Show success
         showSuccess(
@@ -337,13 +337,13 @@ async function handleRegister(e) {
         }, 3000);
         
     } catch (error) {
-        showError(document.getElementById('registerEmailError'), 'Registration failed. Please try again.');
+        showError(document.getElementById('registerEmailError'), error.message || 'Registration failed. Please try again.');
     } finally {
         setLoadingState(submitBtn, false);
     }
 }
 
-// Forgot password handling
+// Forgot password handling with backend integration
 async function handleForgotPassword(e) {
     e.preventDefault();
     
@@ -361,6 +361,13 @@ async function handleForgotPassword(e) {
         // Simulate API call
         await simulateApiCall(1500);
         
+        // Use backend API for password reset
+        const result = window.backendAPI.requestPasswordReset(email);
+        
+        if (!result.success) {
+            throw new Error(result.error);
+        }
+        
         closeForgotPassword();
         showSuccess(
             'Reset Link Sent!', 
@@ -370,7 +377,7 @@ async function handleForgotPassword(e) {
         e.target.reset();
         
     } catch (error) {
-        showError(document.getElementById('forgotEmailError'), 'Failed to send reset link. Please try again.');
+        showError(document.getElementById('forgotEmailError'), error.message || 'Failed to send reset link. Please try again.');
     } finally {
         setLoadingState(submitBtn, false);
     }

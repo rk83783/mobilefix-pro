@@ -396,6 +396,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     initializeFAQ();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    initializeContactPage();
+    setupEventListeners();
+    initializeFAQ();
+});
 
 // Initialize contact page
 function initializeContactPage() {
