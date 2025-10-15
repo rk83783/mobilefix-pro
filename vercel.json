@@ -1,23 +1,5 @@
 {
-  "version": 2,
-  "name": "mobilefix-pro",
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
+  "name": "mobilefix-pro-rk83783",
   "headers": [
     {
       "source": "/(.*)",
