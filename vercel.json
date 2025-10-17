@@ -1,23 +1,6 @@
 {
   "version": 2,
   "name": "mobilefix-pro",
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
@@ -46,8 +29,11 @@
       ]
     }
   ],
-  "cleanUrls": true,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "installCommand": null
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ],
+  "cleanUrls": true
 }
