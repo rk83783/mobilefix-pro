@@ -7,6 +7,136 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const header = document.querySelector('.header');
 
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateAuthUI();
+    checkUserAuthentication();
+});
+
+// Update UI based on authentication state
+function updateAuthUI() {
+    const loginBtn = document.querySelector('.login-btn');
+    
+    if (API.isAuthenticated()) {
+        const user = API.getCurrentUser();
+        
+        // Update login button to show user info
+        if (loginBtn) {
+            loginBtn.innerHTML = `<i class="fas fa-user-circle"></i> ${user.full_name || user.email}`;
+            loginBtn.onclick = (e) => {
+                e.preventDefault();
+                showUserMenu();
+            };
+            loginBtn.style.cursor = 'pointer';
+        }
+    } else {
+        // User not logged in
+        if (loginBtn) {
+            loginBtn.innerHTML = 'Login';
+            loginBtn.onclick = () => {
+                window.location.href = 'login.html';
+            };
+        }
+    }
+}
+
+// Show user dropdown menu
+function showUserMenu() {
+    const menu = document.createElement('div');
+    menu.className = 'user-dropdown-menu';
+    menu.innerHTML = `
+        <div class="user-menu-item" onclick="viewProfile()">
+            <i class="fas fa-user"></i> Profile
+        </div>
+        <div class="user-menu-item" onclick="viewOrders()">
+            <i class="fas fa-shopping-bag"></i> My Orders
+        </div>
+        <div class="user-menu-item" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </div>
+    `;
+    
+    // Remove existing menu if any
+    const existing = document.querySelector('.user-dropdown-menu');
+    if (existing) existing.remove();
+    
+    // Position and add menu
+    const loginBtn = document.querySelector('.login-btn');
+    loginBtn.parentElement.style.position = 'relative';
+    loginBtn.parentElement.appendChild(menu);
+    
+    // Close on click outside
+    setTimeout(() => {
+        document.addEventListener('click', closeUserMenu);
+    }, 100);
+}
+
+function closeUserMenu(e) {
+    if (!e.target.closest('.user-dropdown-menu') && !e.target.closest('.login-btn')) {
+        const menu = document.querySelector('.user-dropdown-menu');
+        if (menu) menu.remove();
+        document.removeEventListener('click', closeUserMenu);
+    }
+}
+
+function viewProfile() {
+    window.location.href = 'admin.html';
+}
+
+function viewOrders() {
+    window.location.href = 'admin.html';
+}
+
+async function logout() {
+    if (!confirm('Are you sure you want to logout?')) return;
+    
+    try {
+        await API.auth.logout();
+        showNotification('Logged out successfully', 'success');
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+    } catch (error) {
+        console.error('Logout error:', error);
+        API.clearAuth();
+        window.location.href = 'index.html';
+    }
+}
+
+// Check user authentication status
+async function checkUserAuthentication() {
+    if (API.isAuthenticated()) {
+        try {
+            // Verify token is still valid by fetching profile
+            await API.auth.getProfile();
+            console.log('✅ User authenticated');
+        } catch (error) {
+            console.log('❌ Token expired, clearing auth');
+            API.clearAuth();
+            updateAuthUI();
+        }
+    }
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
 // Search Modal Functionality
 searchBtn.addEventListener('click', () => {
     searchModal.style.display = 'flex';

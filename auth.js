@@ -2,15 +2,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeAuth();
     setupEventListeners();
+    
+    // Check if user should be redirected after login
+    const redirectAfterLogin = localStorage.getItem('redirect_after_login');
+    if (redirectAfterLogin && API.isAuthenticated()) {
+        localStorage.removeItem('redirect_after_login');
+        window.location.href = redirectAfterLogin;
+    }
 });
 
 // Initialize authentication system
 function initializeAuth() {
-    // Check if user is already logged in
-    const currentUser = getCurrentUser();
-    if (currentUser && window.location.pathname.includes('login.html')) {
-        // Redirect to dashboard if already logged in
-        window.location.href = 'admin.html';
+    // Check if user is already logged in (using Django API)
+    if (API.isAuthenticated() && window.location.pathname.includes('login.html')) {
+        // Redirect to homepage if already logged in
+        window.location.href = 'index.html';
+        return;
     }
     
     // Setup tab switching
@@ -229,7 +236,7 @@ function togglePassword(fieldId) {
     }
 }
 
-// Login handling with backend integration
+// Login handling with Django API
 async function handleLogin(e) {
     e.preventDefault();
     
@@ -250,39 +257,43 @@ async function handleLogin(e) {
     setLoadingState(submitBtn, true);
     
     try {
-        // Simulate API call
-        await simulateApiCall(1500);
+        // Call Django API for login
+        const response = await API.auth.login(loginData.email, loginData.password);
         
-        // Use backend API for login
-        const result = window.backendAPI.loginUser(loginData.email, loginData.password);
+        console.log('✅ Login successful:', response);
         
-        if (!result.success) {
-            throw new Error(result.error);
-        }
+        // Show success notification
+        showSuccess('Login Successful!', `Welcome back, ${response.user.full_name || response.user.email}!`);
         
-        const user = result.user;
-        
-        // Store user session
-        storeUserSession(user, loginData.remember);
-        
-        // Log activity
-        window.backendAPI.logAdminActivity('user_login', `${user.email} logged in`);
-        
-        // Show success and redirect
-        showSuccess('Login Successful!', 'Welcome back! Redirecting to your dashboard...');
-        
+        // Redirect after delay
         setTimeout(() => {
-            window.location.href = user.isAdmin ? 'admin.html' : 'products.html';
-        }, 2000);
+            // Check if there's a redirect URL
+            const redirectUrl = localStorage.getItem('redirect_after_login');
+            if (redirectUrl) {
+                localStorage.removeItem('redirect_after_login');
+                window.location.href = redirectUrl;
+            } else {
+                // Default redirect to homepage
+                window.location.href = 'index.html';
+            }
+        }, 1500);
         
     } catch (error) {
-        showError(document.getElementById('loginPasswordError'), error.message || 'Invalid email or password');
-    } finally {
+        console.error('❌ Login failed:', error);
+        
+        let errorMsg = 'Invalid email or password';
+        if (error.data && error.data.detail) {
+            errorMsg = error.data.detail;
+        } else if (error.message) {
+            errorMsg = error.message;
+        }
+        
+        showError(document.getElementById('loginPasswordError'), errorMsg);
         setLoadingState(submitBtn, false);
     }
 }
 
-// Register handling with backend integration
+// Register handling with Django API
 async function handleRegister(e) {
     e.preventDefault();
     
@@ -309,36 +320,53 @@ async function handleRegister(e) {
     setLoadingState(submitBtn, true);
     
     try {
-        // Simulate API call
-        await simulateApiCall(2000);
+        // Prepare data for Django API
+        const apiData = {
+            email: registerData.email,
+            password: registerData.password,
+            password_confirm: registerData.confirmPassword,
+            full_name: `${registerData.firstName} ${registerData.lastName}`,
+            phone: registerData.phone || ''
+        };
         
-        // Use backend API for registration
-        const result = window.backendAPI.registerUser(registerData);
+        // Call Django API for registration
+        const response = await API.auth.register(apiData);
         
-        if (!result.success) {
-            throw new Error(result.error);
-        }
+        console.log('✅ Registration successful:', response);
         
-        // Log activity
-        window.backendAPI.logAdminActivity('user_register', `New user registered: ${registerData.email}`);
-        
-        // Show success
+        // Show success message
         showSuccess(
             'Account Created Successfully!', 
-            'Welcome to MobileFix Pro! Please check your email for verification instructions.'
+            `Welcome to MobileFix Pro, ${response.user.full_name}! You are now logged in.`
         );
         
         // Clear form
         e.target.reset();
         
-        // Switch to login tab after delay
+        // Redirect to homepage after delay
         setTimeout(() => {
-            document.querySelector('[data-tab="login"]').click();
-        }, 3000);
+            window.location.href = 'index.html';
+        }, 2000);
         
     } catch (error) {
-        showError(document.getElementById('registerEmailError'), error.message || 'Registration failed. Please try again.');
-    } finally {
+        console.error('❌ Registration failed:', error);
+        
+        let errorMsg = 'Registration failed. Please try again.';
+        
+        // Handle specific error messages from Django
+        if (error.data) {
+            if (error.data.email) {
+                errorMsg = error.data.email[0] || errorMsg;
+            } else if (error.data.password) {
+                errorMsg = error.data.password[0] || errorMsg;
+            } else if (error.data.detail) {
+                errorMsg = error.data.detail;
+            }
+        } else if (error.message) {
+            errorMsg = error.message;
+        }
+        
+        showError(document.getElementById('registerEmailError'), errorMsg);
         setLoadingState(submitBtn, false);
     }
 }
