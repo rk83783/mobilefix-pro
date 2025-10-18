@@ -144,17 +144,22 @@ document.addEventListener('DOMContentLoaded', function() {
     function processBatteryData(data) {
         progressText.textContent = `Processing ${data.length} battery records...`;
         
-        // Simulate processing
+        // In a real implementation, we would send this data to a backend service
+        // For now, we'll simulate the process and show a success message
         setTimeout(() => {
             try {
-                // In a real implementation, this would update the compatibility database
-                // For now, we'll just show a success message
+                // Show success message with instructions for backend integration
                 progressText.textContent = `Successfully processed ${data.length} battery records!`;
                 progressFill.style.backgroundColor = '#4CAF50';
                 
                 // Show success message
                 setTimeout(() => {
-                    alert(`Successfully imported ${data.length} battery records!\n\nThe data would be added to your compatibility database in a full implementation.`);
+                    alert(`Successfully imported ${data.length} battery records!
+
+To fully integrate this data with your compatibility database, you would need to:
+1. Send this data to your backend server
+2. Process it with the Python script (process_battery_excel.py)
+3. Update the compatibility.js file with the new entries`);
                     
                     // Reset form
                     setTimeout(() => {

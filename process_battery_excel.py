@@ -1,14 +1,25 @@
 import pandas as pd
 import json
 import os
+import sys
 
 def read_battery_excel(file_path):
     """
     Read battery data from Excel file and convert to JSON format
     """
     try:
+        # Check if file exists
+        if not os.path.exists(file_path):
+            print(f"❌ Error: Excel file not found at {file_path}")
+            return []
+        
         # Read the Excel file
+        print("📂 Reading Excel file...")
         df = pd.read_excel(file_path)
+        
+        # Print basic info about the data
+        print(f"📊 Found {len(df)} rows and {len(df.columns)} columns")
+        print(f"📋 Columns: {list(df.columns)}")
         
         # Convert to list of dictionaries
         battery_data = df.to_dict('records')
@@ -43,8 +54,8 @@ def read_battery_excel(file_path):
                 "Capacity": row.get('Capacity', 'Unknown'),
                 "Voltage": row.get('Voltage', 'Unknown'),
                 "Type": row.get('Type', 'Unknown'),
-                "Cycle Life": row.get('Cycle Life', 'Unknown'),
-                "Protection": row.get('Protection', 'Standard')
+                "Cycle Life": row.get('Cycle Life', 'Unknown') if pd.notna(row.get('Cycle Life')) else 'Unknown',
+                "Protection": row.get('Protection', 'Standard') if pd.notna(row.get('Protection')) else 'Standard'
             }
             
             # Add to processed data
@@ -53,7 +64,7 @@ def read_battery_excel(file_path):
         return processed_data
     
     except Exception as e:
-        print(f"Error reading Excel file: {e}")
+        print(f"❌ Error reading Excel file: {e}")
         return []
 
 def save_to_json(data, output_file):
@@ -63,15 +74,22 @@ def save_to_json(data, output_file):
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-        print(f"Data saved to {output_file}")
+        print(f"✅ Data saved to {output_file}")
+        return True
     except Exception as e:
-        print(f"Error saving JSON file: {e}")
+        print(f"❌ Error saving JSON file: {e}")
+        return False
 
 def update_compatibility_js(new_data, js_file):
     """
     Update the compatibility.js file with new data
     """
     try:
+        # Check if file exists
+        if not os.path.exists(js_file):
+            print(f"❌ Error: JavaScript file not found at {js_file}")
+            return False
+        
         # Read the existing file
         with open(js_file, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -82,22 +100,18 @@ def update_compatibility_js(new_data, js_file):
         
         start_idx = content.find(start_marker)
         if start_idx == -1:
-            print("Could not find compatibilityData array in file")
+            print("❌ Could not find compatibilityData array in file")
             return False
         
         start_idx += len(start_marker)
         end_idx = content.find(end_marker, start_idx)
         
         if end_idx == -1:
-            print("Could not find end of compatibilityData array")
+            print("❌ Could not find end of compatibilityData array")
             return False
         
         # Extract existing data
         existing_data_str = content[start_idx:end_idx].strip()
-        
-        # Convert existing data to Python list
-        # This is a simplified approach - in practice, you'd want to parse the JS properly
-        existing_data_lines = existing_data_str.split('\n')
         
         # Format new data as JavaScript objects
         new_data_js = []
@@ -106,7 +120,8 @@ def update_compatibility_js(new_data, js_file):
             new_data_js.append(js_obj)
         
         # Combine existing and new data
-        all_data_js = existing_data_str + ",\n" + ",\n".join(new_data_js)
+        separator = ",\n" if existing_data_str else ""  # No comma if array is empty
+        all_data_js = existing_data_str + separator + ",\n".join(new_data_js)
         
         # Replace the data in the file
         new_content = content[:start_idx] + "\n" + all_data_js + "\n" + content[end_idx:]
@@ -115,11 +130,11 @@ def update_compatibility_js(new_data, js_file):
         with open(js_file, 'w', encoding='utf-8') as f:
             f.write(new_content)
         
-        print(f"Updated {js_file} with {len(new_data)} new entries")
+        print(f"✅ Updated {js_file} with {len(new_data)} new entries")
         return True
     
     except Exception as e:
-        print(f"Error updating compatibility.js: {e}")
+        print(f"❌ Error updating compatibility.js: {e}")
         return False
 
 def format_js_object(obj):
@@ -128,7 +143,9 @@ def format_js_object(obj):
     """
     def format_value(value):
         if isinstance(value, str):
-            return f'"{value}"'
+            # Escape quotes in strings
+            escaped = value.replace('"', '\\"')
+            return f'"{escaped}"'
         elif isinstance(value, (int, float)):
             return str(value)
         elif isinstance(value, bool):
@@ -148,37 +165,78 @@ def format_js_object(obj):
     
     return "{\n" + ",\n".join(items) + "\n    }"
 
+def print_sample_data(data, count=3):
+    """
+    Print sample of processed data
+    """
+    print(f"\n📝 Sample of processed data (first {count} entries):")
+    for i, entry in enumerate(data[:count]):
+        print(f"  Entry {i+1}:")
+        print(f"    Title: {entry['title']}")
+        print(f"    Brand: {entry['brand']}")
+        print(f"    Compatibility: {entry['compatibility'][:3]}{'...' if len(entry['compatibility']) > 3 else ''}")
+        print(f"    Capacity: {entry['specifications'].get('Capacity', 'Unknown')}")
+        print()
+
 # Main execution
 if __name__ == "__main__":
-    # File paths
+    print("🔋 MobileFix Pro - Battery Data Processor")
+    print("=" * 50)
+    
+    # Default file paths
     excel_file = r"C:\Users\Rakesh\OneDrive\Desktop\hardware list\Battery.xlsx"
     output_json = "battery_data.json"
     compatibility_js = "compatibility.js"
     
-    # Check if file exists
-    if not os.path.exists(excel_file):
-        print(f"Excel file not found: {excel_file}")
-        exit(1)
+    # Allow command line arguments to override file paths
+    if len(sys.argv) > 1:
+        excel_file = sys.argv[1]
+        print(f"📁 Using Excel file: {excel_file}")
+    
+    if len(sys.argv) > 2:
+        output_json = sys.argv[2]
+        print(f"📁 Using JSON output file: {output_json}")
+    
+    if len(sys.argv) > 3:
+        compatibility_js = sys.argv[3]
+        print(f"📁 Using JavaScript file: {compatibility_js}")
     
     # Read Excel data
-    print("Reading Excel file...")
+    print("\n🔄 Processing Excel data...")
     battery_data = read_battery_excel(excel_file)
     
     if not battery_data:
-        print("No data found in Excel file")
-        exit(1)
+        print("⚠️  No data found in Excel file or error occurred")
+        sys.exit(1)
     
-    print(f"Found {len(battery_data)} battery entries")
+    print(f"✅ Successfully processed {len(battery_data)} battery entries")
+    
+    # Print sample data
+    print_sample_data(battery_data)
     
     # Save to JSON
-    save_to_json(battery_data, output_json)
+    print("💾 Saving to JSON file...")
+    json_success = save_to_json(battery_data, output_json)
+    
+    if not json_success:
+        print("⚠️  Failed to save JSON file")
     
     # Update compatibility.js
-    print("Updating compatibility database...")
-    success = update_compatibility_js(battery_data, compatibility_js)
+    print("🔄 Updating compatibility database...")
+    js_success = update_compatibility_js(battery_data, compatibility_js)
     
-    if success:
-        print("✅ Successfully updated compatibility database!")
-        print(f"Added {len(battery_data)} new battery entries")
+    if js_success:
+        print("🎉 Successfully updated compatibility database!")
+        print(f"📈 Added {len(battery_data)} new battery entries")
     else:
-        print("❌ Failed to update compatibility database")
+        print("⚠️  Failed to update compatibility database")
+    
+    # Final summary
+    print("\n" + "=" * 50)
+    print("📊 PROCESSING COMPLETE")
+    print("=" * 50)
+    print(f"✅ Excel file processed: {excel_file}")
+    print(f"✅ Entries processed: {len(battery_data)}")
+    print(f"✅ JSON file created: {output_json}")
+    print(f"{'✅' if js_success else '❌'} Compatibility database updated: {compatibility_js}")
+    print("=" * 50)
