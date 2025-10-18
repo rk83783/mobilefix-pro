@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - MobileFix Pro</title>
+    <title>Part Compatibility - MobileFix Pro</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="compatibility.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -21,8 +21,8 @@
                 
                 <div class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
-                    <a href="products.html" class="nav-link active">Products</a>
-                    <a href="compatibility.html" class="nav-link">Compatibility</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="compatibility.html" class="nav-link active">Compatibility</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                     <a href="login.html" class="nav-link">Login</a>
                     <a href="admin.html" class="nav-link">Admin</a>
@@ -37,29 +37,26 @@
         </nav>
     </header>
 
-    <!-- Products Hero -->
+    <!-- Hero Section -->
     <section class="products-hero">
         <div class="container">
-            <h1>Universal Mobile Parts Catalog</h1>
-            <p>Professional quality parts compatible with 1500+ mobile models</p>
+            <h1>Mobile Part Compatibility Guide</h1>
+            <p>Find which parts work with which mobile models - Technician's Ultimate Reference</p>
         </div>
     </section>
 
-    <!-- Filters -->
+    <!-- Search Section -->
     <section class="filters-section">
         <div class="container">
             <div class="filters-container">
                 <div class="filter-group">
-                    <label>Category:</label>
-                    <select id="categoryFilter">
-                        <option value="">All Categories</option>
-                        <option value="display">Displays</option>
-                        <option value="battery">Batteries</option>
-                        <option value="charging">Charging Components</option>
-                        <option value="cover">Back Covers</option>
-                        <option value="frame">Frames</option>
-                        <option value="glass">Glass Guards</option>
-                    </select>
+                    <label>Search by Model:</label>
+                    <input type="text" id="searchModel" placeholder="e.g., iPhone 13, Galaxy S21...">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Search by Part:</label>
+                    <input type="text" id="searchPart" placeholder="e.g., Display, Battery, Glass...">
                 </div>
                 
                 <div class="filter-group">
@@ -72,42 +69,26 @@
                         <option value="vivo">Vivo</option>
                         <option value="oppo">Oppo</option>
                         <option value="realme">Realme</option>
+                        <option value="oneplus">OnePlus</option>
+                        <option value="xiaomi">Xiaomi</option>
                     </select>
                 </div>
                 
-                <div class="filter-group">
-                    <label>Price Range:</label>
-                    <select id="priceFilter">
-                        <option value="">All Prices</option>
-                        <option value="0-500">₹0 - ₹500</option>
-                        <option value="500-1000">₹500 - ₹1000</option>
-                        <option value="1000-2000">₹1000 - ₹2000</option>
-                        <option value="2000+">₹2000+</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <input type="text" id="searchProducts" placeholder="Search products...">
-                </div>
-                
-                <button class="clear-filters">Clear Filters</button>
+                <button class="clear-filters">Clear Search</button>
             </div>
         </div>
     </section>
 
-    <!-- Products Grid -->
+    <!-- Results Section -->
     <section class="products-section">
         <div class="container">
             <div class="products-header">
-                <h2>Available Products</h2>
-                <div class="view-toggle">
-                    <button class="view-btn active" data-view="grid"><i class="fas fa-th-large"></i></button>
-                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
-                </div>
+                <h2>Compatibility Results</h2>
+                <div class="results-count" id="resultsCount">Showing all parts</div>
             </div>
             
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically loaded here -->
+            <div class="compatibility-results" id="compatibilityResults">
+                <!-- Results will be dynamically loaded here -->
             </div>
             
             <div class="pagination">
@@ -118,8 +99,8 @@
         </div>
     </section>
 
-    <!-- Product Modal -->
-    <div class="product-modal" id="productModal">
+    <!-- Part Detail Modal -->
+    <div class="product-modal" id="partModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-body">
@@ -129,27 +110,23 @@
                 </div>
                 <div class="product-details">
                     <h2 id="modalTitle"></h2>
-                    <div class="product-rating">
-                        <div class="stars" id="modalRating"></div>
-                        <span class="rating-count" id="modalRatingCount"></span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price" id="modalPrice"></span>
-                        <span class="original-price" id="modalOriginalPrice"></span>
-                    </div>
+                    <div class="product-category" id="modalCategory"></div>
+                    <div class="product-brand" id="modalBrand"></div>
                     <div class="product-description" id="modalDescription"></div>
+                    
                     <div class="product-compatibility">
                         <h4>Compatible Models:</h4>
                         <div class="compatibility-list" id="modalCompatibility"></div>
                     </div>
-                    <div class="product-actions">
-                        <div class="quantity-selector">
-                            <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
-                            <input type="number" id="modalQuantity" value="1" min="1" max="10">
-                            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
-                        </div>
-                        <button class="add-to-cart-btn" id="modalAddToCart">Add to Cart</button>
-                        <button class="buy-now-btn" id="modalBuyNow">Buy Now</button>
+                    
+                    <div class="part-specifications">
+                        <h4>Specifications:</h4>
+                        <ul id="modalSpecifications"></ul>
+                    </div>
+                    
+                    <div class="part-combos">
+                        <h4>Common Combos:</h4>
+                        <div class="combo-list" id="modalCombos"></div>
                     </div>
                 </div>
             </div>
@@ -173,18 +150,19 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
+                        <li><a href="compatibility.html">Compatibility</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="login.html">Login</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Categories</h4>
+                    <h4>Resources</h4>
                     <ul>
-                        <li><a href="#displays">Universal Displays</a></li>
-                        <li><a href="#batteries">Universal Batteries</a></li>
-                        <li><a href="#charging">Charging Components</a></li>
-                        <li><a href="#covers">Back Covers</a></li>
+                        <li><a href="#">Repair Guides</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">Troubleshooting</a></li>
+                        <li><a href="#">Tech Support</a></li>
                     </ul>
                 </div>
                 
@@ -205,10 +183,8 @@
         </div>
     </footer>
 
-    <!-- Django API Client -->
-    <script src="api-client.js"></script>
     <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="products.js"></script>
+    <script src="compatibility.js"></script>
 </body>
 </html>
