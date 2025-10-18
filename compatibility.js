@@ -27,6 +27,54 @@ const compatibilityData = [
         ]
     },
     {
+        id: 10,
+        title: "LCD Display for Redmi Series",
+        category: "display",
+        brand: "redmi",
+        description: "High-quality LCD display with excellent color accuracy and brightness. Perfect replacement for Redmi series phones.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=LCD+Display",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=LCD+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=LCD+2"
+        ],
+        compatibility: ["Redmi Note 11", "Redmi Note 10 Pro", "Redmi 10", "Redmi 9 Power", "Redmi Note 9 Pro", "Redmi Note 8 Pro"],
+        specifications: {
+            "Display Type": "LCD",
+            "Resolution": "2400 x 1080",
+            "Size": "6.67 inches",
+            "Refresh Rate": "120Hz",
+            "Protection": "Asahi Glass"
+        },
+        combos: [
+            { name: "Display + Battery", models: ["Redmi Note 11", "Redmi Note 10 Pro"], discount: "12% off" },
+            { name: "Display + Frame", models: ["Redmi 10", "Redmi 9 Power"], discount: "10% off" }
+        ]
+    },
+    {
+        id: 11,
+        title: "Oppo AMOLED Display",
+        category: "display",
+        brand: "oppo",
+        description: "Premium AMOLED display with vibrant colors and deep contrast. Touch digitizer included.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Oppo+Display",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Oppo+Disp+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Oppo+Disp+2"
+        ],
+        compatibility: ["Oppo Reno 8", "Oppo F21 Pro", "Oppo A96", "Oppo A77", "Oppo Reno 7 Pro"],
+        specifications: {
+            "Display Type": "AMOLED",
+            "Resolution": "2412 x 1080",
+            "Size": "6.43 inches",
+            "Refresh Rate": "90Hz",
+            "Protection": "Schott Glass"
+        },
+        combos: [
+            { name: "Display + Battery", models: ["Oppo Reno 8", "Oppo F21 Pro"], discount: "15% off" },
+            { name: "Display + Glass Guard", models: ["Oppo A96", "Oppo A77"], discount: "8% off" }
+        ]
+    },
+    {
         id: 2,
         title: "AMOLED Display Assembly",
         category: "display",
@@ -101,6 +149,54 @@ const compatibilityData = [
         ]
     },
     {
+        id: 12,
+        title: "5000mAh Battery for Samsung",
+        category: "battery",
+        brand: "samsung",
+        description: "High-capacity 5000mAh battery with extended life cycle. Perfect for heavy usage Samsung devices.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Samsung+Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=SamBat+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=SamBat+2"
+        ],
+        compatibility: ["Galaxy M51", "Galaxy M31", "Galaxy F41", "Galaxy A51", "Galaxy A71"],
+        specifications: {
+            "Capacity": "5000mAh",
+            "Voltage": "3.85V",
+            "Type": "Li-polymer",
+            "Cycle Life": "800+ cycles",
+            "Fast Charge": "25W Adaptive Fast Charging"
+        },
+        combos: [
+            { name: "Battery + Charger", models: ["Galaxy M51", "Galaxy M31"], discount: "18% off" },
+            { name: "Battery + Back Cover", models: ["Galaxy F41", "Galaxy A51"], discount: "10% off" }
+        ]
+    },
+    {
+        id: 13,
+        title: "iPhone Replacement Battery",
+        category: "battery",
+        brand: "iphone",
+        description: "Original quality battery for iPhone models with genuine components and safety certifications.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=iPhone+Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=iPhoneBat+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=iPhoneBat+2"
+        ],
+        compatibility: ["iPhone 12", "iPhone 12 Pro", "iPhone 11", "iPhone 11 Pro", "iPhone XR"],
+        specifications: {
+            "Capacity": "3687mAh",
+            "Voltage": "3.81V",
+            "Type": "Li-ion",
+            "Cycle Life": "1000+ cycles",
+            "Certification": "CE, FCC, RoHS"
+        },
+        combos: [
+            { name: "Battery + Screen Replacement", models: ["iPhone 12", "iPhone 12 Pro"], discount: "20% off" },
+            { name: "Battery + Charging Cable", models: ["iPhone 11", "iPhone XR"], discount: "15% off" }
+        ]
+    },
+    {
         id: 5,
         title: "Fast Charging Battery",
         category: "battery",
@@ -148,6 +244,30 @@ const compatibilityData = [
         combos: [
             { name: "Charging Port + Flex Cable", models: ["Samsung", "Xiaomi"], discount: "10% off" },
             { name: "Charging Port + Battery", models: ["OnePlus", "Google Pixel"], discount: "12% off" }
+        ]
+    },
+    {
+        id: 14,
+        title: "Micro USB Charging Port",
+        category: "charging",
+        brand: "universal",
+        description: "Durable Micro USB charging port for older Android devices. Reliable connection with high durability.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Micro+USB",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=MicroUSB+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=MicroUSB+2"
+        ],
+        compatibility: ["Samsung J7", "Samsung J5", "Redmi 4A", "Redmi 5A", "Moto G5", "Nokia 6"],
+        specifications: {
+            "Connector Type": "Micro USB",
+            "Data Speed": "USB 2.0",
+            "Power Delivery": "Up to 18W",
+            "Durability": "8,000+ cycles",
+            "Water Resistance": "None"
+        },
+        combos: [
+            { name: "Charging Port + Battery", models: ["Samsung J7", "Redmi 4A"], discount: "10% off" },
+            { name: "Charging Port + Flex Cable", models: ["Redmi 5A", "Moto G5"], discount: "8% off" }
         ]
     },
     {
@@ -201,6 +321,30 @@ const compatibilityData = [
         ]
     },
     {
+        id: 15,
+        title: "Matte Black Back Cover",
+        category: "cover",
+        brand: "universal",
+        description: "Sleek matte black back cover with fingerprint resistant coating. Premium feel with excellent protection.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Matte+Cover",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Matte+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Matte+2"
+        ],
+        compatibility: ["Samsung M31", "Samsung A51", "Redmi Note 9", "Redmi Note 10", "Realme 7"],
+        specifications: {
+            "Material": "TPU",
+            "Design": "Matte Black",
+            "Drop Protection": "Up to 5 feet",
+            "Wireless Charging": "Compatible",
+            "Camera Protection": "Raised edges"
+        },
+        combos: [
+            { name: "Back Cover + Screen Guard", models: ["Samsung M31", "Redmi Note 10"], discount: "15% off" },
+            { name: "Back Cover + Ring Holder", models: ["Samsung A51", "Realme 7"], discount: "12% off" }
+        ]
+    },
+    {
         id: 9,
         title: "Samsung Back Glass Panel",
         category: "cover",
@@ -250,6 +394,30 @@ const compatibilityData = [
             { name: "Metal Frame + Battery", models: ["Samsung S20", "Samsung Note 10"], discount: "12% off" }
         ]
     },
+    {
+        id: 16,
+        title: "Plastic Frame for Redmi Series",
+        category: "frame",
+        brand: "redmi",
+        description: "Durable plastic frame designed specifically for Redmi series phones. Lightweight yet strong.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Plastic+Frame",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Plastic+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Plastic+2"
+        ],
+        compatibility: ["Redmi Note 10", "Redmi Note 9", "Redmi 9", "Redmi 10", "Redmi Note 8"],
+        specifications: {
+            "Material": "Polycarbonate",
+            "Finish": "Matte Black",
+            "Thickness": "1.5mm",
+            "Durability": "Drop Tested",
+            "Antenna Lines": "Integrated"
+        },
+        combos: [
+            { name: "Frame + Battery", models: ["Redmi Note 10", "Redmi Note 9"], discount: "10% off" },
+            { name: "Frame + Display", models: ["Redmi 9", "Redmi 10"], discount: "12% off" }
+        ]
+    },
     
     // Glass Guards
     {
@@ -274,6 +442,30 @@ const compatibilityData = [
         combos: [
             { name: "Screen Guard + Back Cover", models: ["iPhone", "Samsung"], discount: "20% off" },
             { name: "Screen Guard + Privacy Filter", models: ["OnePlus", "Xiaomi"], discount: "15% off" }
+        ]
+    },
+    {
+        id: 17,
+        title: "Privacy Screen Protector",
+        category: "glass",
+        brand: "universal",
+        description: "Privacy screen protector that blocks side viewing angles while maintaining clarity. Perfect for confidential information.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Privacy+Guard",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Privacy+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Privacy+2"
+        ],
+        compatibility: ["iPhone 12", "iPhone 13", "Samsung S21", "Samsung Note 20", "OnePlus 9"],
+        specifications: {
+            "Hardness": "9H",
+            "Thickness": "0.33mm",
+            "Transparency": "99.5%",
+            "Privacy Angle": "45 degrees",
+            "Drop Protection": "Up to 2 feet"
+        },
+        combos: [
+            { name: "Privacy Guard + Back Cover", models: ["iPhone 12", "iPhone 13"], discount: "18% off" },
+            { name: "Privacy Guard + Ring Holder", models: ["Samsung S21", "OnePlus 9"], discount: "12% off" }
         ]
     }
 ];
