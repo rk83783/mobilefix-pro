@@ -6,7 +6,7 @@ const compatibilityData = [
         title: "Universal Li-ion Battery 4000mAh",
         category: "battery",
         brand: "universal",
-        description: "High-capacity universal battery with advanced safety features. Compatible with multiple Redmi and Xiaomi models.",
+        description: "",
         image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
         images: [
             "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1",
