@@ -21,18 +21,14 @@
                 
                 <div class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
-                    <a href="products.html" class="nav-link">Products</a>
                     <a href="compatibility.html" class="nav-link active">Compatibility</a>
+                    <a href="battery-gallery.html" class="nav-link">Battery Gallery</a>
                     <a href="upload.html" class="nav-link">Upload</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="login.html" class="nav-link">Login</a>
-                    <a href="admin.html" class="nav-link">Admin</a>
                 </div>
                 
                 <div class="nav-actions">
                     <button class="search-btn"><i class="fas fa-search"></i></button>
-                    <button class="cart-btn" onclick="window.location.href='cart.html'"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></button>
-                    <button class="membership-btn">Get Membership</button>
                 </div>
             </div>
         </nav>
@@ -83,10 +79,21 @@
                         <option value="realme">Realme</option>
                         <option value="oneplus">OnePlus</option>
                         <option value="xiaomi">Xiaomi</option>
+                        <option value="universal">Universal</option>
                     </select>
                 </div>
                 
                 <button class="clear-filters">Clear Search</button>
+            </div>
+            
+            <!-- Enhanced model search section -->
+            <div class="model-search-container" style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <h3 style="margin-top: 0;">Find Parts for a Specific Model</h3>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="text" id="modelSearchInput" placeholder="Enter mobile model (e.g., iPhone 13 Pro)" style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <button id="searchModelReportBtn" class="btn-primary" style="padding: 10px 20px;">Find Compatible Parts</button>
+                </div>
+                <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #666;">Enter a mobile model to see all parts compatible with that device</p>
             </div>
         </div>
     </section>
@@ -135,11 +142,6 @@
                         <h4>Specifications:</h4>
                         <ul id="modalSpecifications"></ul>
                     </div>
-                    
-                    <div class="part-combos">
-                        <h4>Common Combos:</h4>
-                        <div class="combo-list" id="modalCombos"></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -161,11 +163,9 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
                         <li><a href="compatibility.html">Compatibility</a></li>
                         <li><a href="upload.html">Upload</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="login.html">Login</a></li>
                     </ul>
                 </div>
                 

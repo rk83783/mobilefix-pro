@@ -1,8 +1,49 @@
 // Compatibility data for mobile repair technicians
 const compatibilityData = [
-// Displays
+    // Sample battery data
     {
         id: 1,
+        title: "Universal Li-ion Battery 4000mAh",
+        category: "battery",
+        brand: "universal",
+        description: "High-capacity universal battery with advanced safety features. Compatible with multiple Redmi and Xiaomi models.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"
+        ],
+        compatibility: ["Redmi Note 10", "Redmi Note 9", "Mi 11", "Redmi 9", "Redmi 10", "Xiaomi 11T", "Xiaomi 12"],
+        specifications: {
+            "Capacity": "4000mAh",
+            "Voltage": "3.87V",
+            "Type": "Li-ion",
+            "Cycle Life": "500+ cycles",
+            "Protection": "Overcharge/Overdischarge"
+        }
+    },
+    {
+        id: 2,
+        title: "5000mAh Battery for Samsung",
+        category: "battery",
+        brand: "samsung",
+        description: "High-capacity 5000mAh battery with extended life cycle. Perfect for heavy usage Samsung devices.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Samsung+Battery",
+        images: [
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=SamBat+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=SamBat+2"
+        ],
+        compatibility: ["Galaxy M51", "Galaxy M31", "Galaxy F41", "Galaxy A51", "Galaxy A71"],
+        specifications: {
+            "Capacity": "5000mAh",
+            "Voltage": "3.85V",
+            "Type": "Li-polymer",
+            "Cycle Life": "800+ cycles",
+            "Fast Charge": "25W Adaptive Fast Charging"
+        }
+    },
+    // Sample display data
+    {
+        id: 3,
         title: "Universal OLED Display",
         category: "display",
         brand: "universal",
@@ -20,210 +61,31 @@ const compatibilityData = [
             "Size": "6.7 inches",
             "Refresh Rate": "120Hz",
             "Protection": "Gorilla Glass"
-        },
-        combos: [
-            { name: "Display + Battery Combo", models: ["Galaxy S21", "Galaxy S20"], discount: "15% off" },
-            { name: "Display + Frame Kit", models: ["Galaxy Note 20", "Galaxy S21+"], discount: "10% off" }
-        ]
+        }
     },
-    {
-        id: 10,
-        title: "LCD Display for Redmi Series",
-        category: "display",
-        brand: "redmi",
-        description: "High-quality LCD display with excellent color accuracy and brightness. Perfect replacement for Redmi series phones.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=LCD+Display",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=LCD+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=LCD+2"
-        ],
-        compatibility: ["Redmi Note 11", "Redmi Note 10 Pro", "Redmi 10", "Redmi 9 Power", "Redmi Note 9 Pro", "Redmi Note 8 Pro"],
-        specifications: {
-            "Display Type": "LCD",
-            "Resolution": "2400 x 1080",
-            "Size": "6.67 inches",
-            "Refresh Rate": "120Hz",
-            "Protection": "Asahi Glass"
-        },
-        combos: [
-            { name: "Display + Battery", models: ["Redmi Note 11", "Redmi Note 10 Pro"], discount: "12% off" },
-            { name: "Display + Frame", models: ["Redmi 10", "Redmi 9 Power"], discount: "10% off" }
-        ]
-    },
-    {
-        id: 11,
-        title: "Oppo AMOLED Display",
-        category: "display",
-        brand: "oppo",
-        description: "Premium AMOLED display with vibrant colors and deep contrast. Touch digitizer included.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Oppo+Display",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Oppo+Disp+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Oppo+Disp+2"
-        ],
-        compatibility: ["Oppo Reno 8", "Oppo F21 Pro", "Oppo A96", "Oppo A77", "Oppo Reno 7 Pro"],
-        specifications: {
-            "Display Type": "AMOLED",
-            "Resolution": "2412 x 1080",
-            "Size": "6.43 inches",
-            "Refresh Rate": "90Hz",
-            "Protection": "Schott Glass"
-        },
-        combos: [
-            { name: "Display + Battery", models: ["Oppo Reno 8", "Oppo F21 Pro"], discount: "15% off" },
-            { name: "Display + Glass Guard", models: ["Oppo A96", "Oppo A77"], discount: "8% off" }
-        ]
-    },
-    {
-        id: 2,
-        title: "AMOLED Display Assembly",
-        category: "display",
-        brand: "vivo",
-        description: "Original quality AMOLED display assembly with touch digitizer. Perfect color reproduction and response.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=AMOLED+Vivo",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=AMOLED+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=AMOLED+2"
-        ],
-        compatibility: ["Vivo V21", "Vivo V20", "Vivo X60", "Vivo Y20", "Vivo V19", "Vivo X50"],
-        specifications: {
-            "Display Type": "AMOLED",
-            "Resolution": "2400 x 1080",
-            "Size": "6.5 inches",
-            "Refresh Rate": "90Hz",
-            "Protection": "Dragontrail Glass"
-        },
-        combos: [
-            { name: "Display + Glass Guard", models: ["Vivo V21", "Vivo V20"], discount: "12% off" },
-            { name: "Display + Battery Kit", models: ["Vivo X60", "Vivo X50"], discount: "18% off" }
-        ]
-    },
-    {
-        id: 3,
-        title: "iPhone 13 Pro Max OLED Display",
-        category: "display",
-        brand: "iphone",
-        description: "Premium OLED display for iPhone 13 Pro Max. True tone technology with ProMotion 120Hz refresh rate.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=iPhone+Display",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=iPhone+Display+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=iPhone+Display+2"
-        ],
-        compatibility: ["iPhone 13 Pro Max", "iPhone 13 Pro"],
-        specifications: {
-            "Display Type": "Super Retina XDR OLED",
-            "Resolution": "2778 x 1284",
-            "Size": "6.7 inches",
-            "Refresh Rate": "120Hz ProMotion",
-            "Protection": "Ceramic Shield"
-        },
-        combos: [
-            { name: "Display + Battery", models: ["iPhone 13 Pro Max"], discount: "8% off" },
-            { name: "Display + Back Glass", models: ["iPhone 13 Pro"], discount: "10% off" }
-        ]
-    },
-    
-    // Batteries
+    // Sample back panel data
     {
         id: 4,
-        title: "Universal Li-ion Battery 4000mAh",
-        category: "battery",
+        title: "Universal Back Panel",
+        category: "backpanel",
         brand: "universal",
-        description: "High-capacity universal battery with advanced safety features. Compatible with multiple Redmi and Xiaomi models.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
+        description: "Durable back panel compatible with multiple smartphone models. Provides excellent protection and easy access to internal components.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Back+Panel",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Back+Panel+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Back+Panel+2"
         ],
-        compatibility: ["Redmi Note 10", "Redmi Note 9", "Mi 11", "Redmi 9", "Redmi 10", "Xiaomi 11T", "Xiaomi 12"],
+        compatibility: ["Samsung Galaxy S21", "Samsung Galaxy S20", "Samsung Note 20", "Samsung A52", "Samsung A72"],
         specifications: {
-            "Capacity": "4000mAh",
-            "Voltage": "3.87V",
-            "Type": "Li-ion",
-            "Cycle Life": "500+ cycles",
-            "Protection": "Overcharge/Overdischarge"
-        },
-        combos: [
-            { name: "Battery + Charging Port", models: ["Redmi Note 10", "Redmi Note 9"], discount: "15% off" },
-            { name: "Battery + Back Cover", models: ["Mi 11", "Xiaomi 12"], discount: "12% off" }
-        ]
+            "Material": "Polycarbonate",
+            "Finish": "Matte",
+            "Thickness": "1.2mm",
+            "Protection": "Drop Resistant"
+        }
     },
-    {
-        id: 12,
-        title: "5000mAh Battery for Samsung",
-        category: "battery",
-        brand: "samsung",
-        description: "High-capacity 5000mAh battery with extended life cycle. Perfect for heavy usage Samsung devices.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Samsung+Battery",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=SamBat+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=SamBat+2"
-        ],
-        compatibility: ["Galaxy M51", "Galaxy M31", "Galaxy F41", "Galaxy A51", "Galaxy A71"],
-        specifications: {
-            "Capacity": "5000mAh",
-            "Voltage": "3.85V",
-            "Type": "Li-polymer",
-            "Cycle Life": "800+ cycles",
-            "Fast Charge": "25W Adaptive Fast Charging"
-        },
-        combos: [
-            { name: "Battery + Charger", models: ["Galaxy M51", "Galaxy M31"], discount: "18% off" },
-            { name: "Battery + Back Cover", models: ["Galaxy F41", "Galaxy A51"], discount: "10% off" }
-        ]
-    },
-    {
-        id: 13,
-        title: "iPhone Replacement Battery",
-        category: "battery",
-        brand: "iphone",
-        description: "Original quality battery for iPhone models with genuine components and safety certifications.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=iPhone+Battery",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=iPhoneBat+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=iPhoneBat+2"
-        ],
-        compatibility: ["iPhone 12", "iPhone 12 Pro", "iPhone 11", "iPhone 11 Pro", "iPhone XR"],
-        specifications: {
-            "Capacity": "3687mAh",
-            "Voltage": "3.81V",
-            "Type": "Li-ion",
-            "Cycle Life": "1000+ cycles",
-            "Certification": "CE, FCC, RoHS"
-        },
-        combos: [
-            { name: "Battery + Screen Replacement", models: ["iPhone 12", "iPhone 12 Pro"], discount: "20% off" },
-            { name: "Battery + Charging Cable", models: ["iPhone 11", "iPhone XR"], discount: "15% off" }
-        ]
-    },
+    // Sample charging port data
     {
         id: 5,
-        title: "Fast Charging Battery",
-        category: "battery",
-        brand: "oppo",
-        description: "Fast charging compatible battery with BLP technology. Extended lifespan and safety features included.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Oppo+Battery",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Oppo+Bat+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Oppo+Bat+2"
-        ],
-        compatibility: ["Oppo F19", "Oppo A74", "Oppo Reno 6", "Oppo A54", "Oppo F21", "Oppo Reno 7"],
-        specifications: {
-            "Capacity": "4500mAh",
-            "Voltage": "3.85V",
-            "Type": "Li-polymer",
-            "Fast Charge": "65W SuperVOOC",
-            "Cycle Life": "800+ cycles"
-        },
-        combos: [
-            { name: "Battery + Charger", models: ["Oppo F19", "Oppo A74"], discount: "20% off" },
-            { name: "Battery + Charging Flex", models: ["Oppo Reno 6", "Oppo Reno 7"], discount: "15% off" }
-        ]
-    },
-    
-    // Charging Ports
-    {
-        id: 6,
         title: "USB-C Charging Port Module",
         category: "charging",
         brand: "universal",
@@ -240,1577 +102,87 @@ const compatibilityData = [
             "Power Delivery": "Up to 100W",
             "Durability": "10,000+ cycles",
             "Water Resistance": "IPX1"
-        },
-        combos: [
-            { name: "Charging Port + Flex Cable", models: ["Samsung", "Xiaomi"], discount: "10% off" },
-            { name: "Charging Port + Battery", models: ["OnePlus", "Google Pixel"], discount: "12% off" }
-        ]
+        }
     },
+    // Sample flex cable data
     {
-        id: 14,
-        title: "Micro USB Charging Port",
-        category: "charging",
+        id: 6,
+        title: "Universal Flex Cable",
+        category: "flex",
         brand: "universal",
-        description: "Durable Micro USB charging port for older Android devices. Reliable connection with high durability.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Micro+USB",
+        description: "High-quality flex cable for various smartphone models. Ensures reliable connections between components.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Flex+Cable",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=MicroUSB+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=MicroUSB+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Flex+Cable+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Flex+Cable+2"
         ],
-        compatibility: ["Samsung J7", "Samsung J5", "Redmi 4A", "Redmi 5A", "Moto G5", "Nokia 6"],
+        compatibility: ["Samsung Galaxy S21", "Samsung Galaxy S20", "Samsung Note 20", "Redmi Note 10", "Redmi Note 9"],
         specifications: {
-            "Connector Type": "Micro USB",
-            "Data Speed": "USB 2.0",
-            "Power Delivery": "Up to 18W",
-            "Durability": "8,000+ cycles",
-            "Water Resistance": "None"
-        },
-        combos: [
-            { name: "Charging Port + Battery", models: ["Samsung J7", "Redmi 4A"], discount: "10% off" },
-            { name: "Charging Port + Flex Cable", models: ["Redmi 5A", "Moto G5"], discount: "8% off" }
-        ]
+            "Connector Type": "Multi-pin",
+            "Length": "50mm",
+            "Durability": "5000+ bends",
+            "Protection": "ESD Resistant"
+        }
     },
+    // Sample speaker data
     {
         id: 7,
-        title: "Lightning Port Module",
-        category: "charging",
-        brand: "iphone",
-        description: "Premium Lightning port module for iPhone. Original quality with fast charging support.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Lightning+Port",
+        title: "Universal Speaker",
+        category: "speaker",
+        brand: "universal",
+        description: "High-fidelity speaker compatible with multiple smartphone models. Delivers clear and powerful audio output.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Speaker",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Lightning+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Lightning+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Speaker+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Speaker+2"
         ],
-        compatibility: ["iPhone 11", "iPhone SE", "iPhone 8", "iPhone X", "iPhone 12", "iPhone 13", "iPhone 14"],
+        compatibility: ["Samsung Galaxy S21", "Samsung Galaxy S20", "iPhone 12", "iPhone 13", "Redmi Note 10"],
         specifications: {
-            "Connector Type": "Lightning",
-            "Data Speed": "USB 2.0",
-            "Power Delivery": "Up to 20W",
-            "Durability": "15,000+ cycles",
-            "Certification": "MFi Certified"
-        },
-        combos: [
-            { name: "Lightning Port + Battery", models: ["iPhone 12", "iPhone 13"], discount: "8% off" },
-            { name: "Lightning Port + Charging Cable", models: ["iPhone 11", "iPhone SE"], discount: "15% off" }
-        ]
+            "Impedance": "8 Ohms",
+            "Power": "1W",
+            "Frequency Response": "20Hz-20kHz",
+            "Sensitivity": "85dB"
+        }
     },
-    
-    // Back Covers
+    // Sample camera module data
     {
         id: 8,
-        title: "Premium Back Cover - Clear Design",
-        category: "cover",
-        brand: "iphone",
-        description: "Transparent back cover with enhanced protection. Maintains the original design while providing excellent protection.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Back+Cover",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Cover+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Cover+2"
-        ],
-        compatibility: ["iPhone 14", "iPhone 13", "iPhone 12", "iPhone 11", "iPhone SE 2nd Gen"],
-        specifications: {
-            "Material": "TPU + PC",
-            "Design": "Clear",
-            "Drop Protection": "Up to 6 feet",
-            "Wireless Charging": "Compatible",
-            "MagSafe": "Compatible"
-        },
-        combos: [
-            { name: "Back Cover + Screen Guard", models: ["iPhone 14", "iPhone 13"], discount: "15% off" },
-            { name: "Back Cover + Ring Holder", models: ["iPhone 12", "iPhone 11"], discount: "20% off" }
-        ]
-    },
-    {
-        id: 15,
-        title: "Matte Black Back Cover",
-        category: "cover",
+        title: "Triple Camera Module",
+        category: "camera",
         brand: "universal",
-        description: "Sleek matte black back cover with fingerprint resistant coating. Premium feel with excellent protection.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Matte+Cover",
+        description: "Advanced triple camera module with high-resolution sensors. Compatible with multiple flagship smartphone models.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Camera+Module",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Matte+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Matte+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Camera+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Camera+2"
         ],
-        compatibility: ["Samsung M31", "Samsung A51", "Redmi Note 9", "Redmi Note 10", "Realme 7"],
+        compatibility: ["Samsung Galaxy S21", "Samsung Galaxy S20", "iPhone 12", "iPhone 13"],
         specifications: {
-            "Material": "TPU",
-            "Design": "Matte Black",
-            "Drop Protection": "Up to 5 feet",
-            "Wireless Charging": "Compatible",
-            "Camera Protection": "Raised edges"
-        },
-        combos: [
-            { name: "Back Cover + Screen Guard", models: ["Samsung M31", "Redmi Note 10"], discount: "15% off" },
-            { name: "Back Cover + Ring Holder", models: ["Samsung A51", "Realme 7"], discount: "12% off" }
-        ]
+            "Resolution": "48MP + 12MP + 12MP",
+            "Aperture": "f/1.8 + f/2.2 + f/2.4",
+            "Optical Zoom": "3x",
+            "Video": "4K@60fps"
+        }
     },
+    // Sample motherboard data
     {
         id: 9,
-        title: "Samsung Back Glass Panel",
-        category: "cover",
-        brand: "samsung",
-        description: "Original quality back glass panel for Samsung flagship models. Premium finish with camera cutouts.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Samsung+Back",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Sam+Back+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Sam+Back+2"
-        ],
-        compatibility: ["Galaxy S21", "Galaxy S20", "Galaxy Note 20", "Galaxy S21+", "Galaxy S21 Ultra", "Galaxy S22"],
-        specifications: {
-            "Material": "Tempered Glass",
-            "Thickness": "0.8mm",
-            "Hardness": "9H",
-            "Camera Cutouts": "Precise",
-            "Wireless Charging": "Compatible"
-        },
-        combos: [
-            { name: "Back Glass + Camera Module", models: ["Galaxy S21", "Galaxy S20"], discount: "12% off" },
-            { name: "Back Glass + Battery", models: ["Galaxy Note 20", "Galaxy S21+"], discount: "10% off" }
-        ]
-    },
-    
-    // Frames
-    {
-        id: 10,
-        title: "Universal Metal Frame",
-        category: "frame",
+        title: "Universal Motherboard",
+        category: "motherboard",
         brand: "universal",
-        description: "Precision-engineered metal frame with perfect fit. Durable aluminum construction with premium finish.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Metal+Frame",
+        description: "High-quality motherboard compatible with multiple smartphone models. Ensures optimal performance and reliability.",
+        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Motherboard",
         images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Frame+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Frame+2"
+            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Mobo+1",
+            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Mobo+2"
         ],
-        compatibility: ["iPhone X", "iPhone XS", "iPhone 11", "Samsung S20", "Samsung Note 10"],
+        compatibility: ["Samsung Galaxy S21", "Samsung Galaxy S20", "iPhone 12", "iPhone 13"],
         specifications: {
-            "Material": "Aluminum Alloy",
-            "Finish": "Space Gray",
-            "Thickness": "1.2mm",
-            "Durability": "Military Grade",
-            "Antenna Lines": "Integrated"
-        },
-        combos: [
-            { name: "Metal Frame + Display", models: ["iPhone X", "iPhone XS"], discount: "15% off" },
-            { name: "Metal Frame + Battery", models: ["Samsung S20", "Samsung Note 10"], discount: "12% off" }
-        ]
-    },
-    {
-        id: 16,
-        title: "Plastic Frame for Redmi Series",
-        category: "frame",
-        brand: "redmi",
-        description: "Durable plastic frame designed specifically for Redmi series phones. Lightweight yet strong.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Plastic+Frame",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Plastic+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Plastic+2"
-        ],
-        compatibility: ["Redmi Note 10", "Redmi Note 9", "Redmi 9", "Redmi 10", "Redmi Note 8"],
-        specifications: {
-            "Material": "Polycarbonate",
-            "Finish": "Matte Black",
-            "Thickness": "1.5mm",
-            "Durability": "Drop Tested",
-            "Antenna Lines": "Integrated"
-        },
-        combos: [
-            { name: "Frame + Battery", models: ["Redmi Note 10", "Redmi Note 9"], discount: "10% off" },
-            { name: "Frame + Display", models: ["Redmi 9", "Redmi 10"], discount: "12% off" }
-        ]
-    },
-    
-    // Glass Guards
-    {
-        id: 11,
-        title: "Tempered Glass Screen Protector",
-        category: "glass",
-        brand: "universal",
-        description: "9H hardness tempered glass with oleophobic coating. Crystal clear with bubble-free installation.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Glass+Guard",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Glass+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Glass+2"
-        ],
-        compatibility: ["Most Android", "iPhone", "Samsung", "OnePlus", "Xiaomi", "Vivo", "Oppo", "Realme"],
-        specifications: {
-            "Hardness": "9H",
-            "Thickness": "0.26mm",
-            "Transparency": "99.9%",
-            "Coating": "Oleophobic + Anti-fingerprint",
-            "Drop Protection": "Up to 3 feet"
-        },
-        combos: [
-            { name: "Screen Guard + Back Cover", models: ["iPhone", "Samsung"], discount: "20% off" },
-            { name: "Screen Guard + Privacy Filter", models: ["OnePlus", "Xiaomi"], discount: "15% off" }
-        ]
-    },
-    {
-        id: 17,
-        title: "Privacy Screen Protector",
-        category: "glass",
-        brand: "universal",
-        description: "Privacy screen protector that blocks side viewing angles while maintaining clarity. Perfect for confidential information.",
-        image: "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Privacy+Guard",
-        images: [
-            "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Privacy+1",
-            "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Privacy+2"
-        ],
-        compatibility: ["iPhone 12", "iPhone 13", "Samsung S21", "Samsung Note 20", "OnePlus 9"],
-        specifications: {
-            "Hardness": "9H",
-            "Thickness": "0.33mm",
-            "Transparency": "99.5%",
-            "Privacy Angle": "45 degrees",
-            "Drop Protection": "Up to 2 feet"
-        },
-        combos: [
-            { name: "Privacy Guard + Back Cover", models: ["iPhone 12", "iPhone 13"], discount: "18% off" },
-            { name: "Privacy Guard + Ring Holder", models: ["Samsung S21", "OnePlus 9"], discount: "12% off" }
-        ]
-    },
-{
-        "id": 100,
-        "title": "Battery 1",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 101,
-        "title": "Battery 2",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 102,
-        "title": "Battery 3",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 103,
-        "title": "Battery 4",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 104,
-        "title": "Battery 5",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 105,
-        "title": "Battery 6",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 106,
-        "title": "Battery 7",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 107,
-        "title": "Battery 8",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 108,
-        "title": "Battery 9",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 109,
-        "title": "Battery 10",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 110,
-        "title": "Battery 11",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 111,
-        "title": "Battery 12",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 112,
-        "title": "Battery 13",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 113,
-        "title": "Battery 14",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 114,
-        "title": "Battery 15",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 115,
-        "title": "Battery 16",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 116,
-        "title": "Battery 17",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 117,
-        "title": "Battery 18",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 118,
-        "title": "Battery 19",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 119,
-        "title": "Battery 20",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 120,
-        "title": "Battery 21",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 121,
-        "title": "Battery 22",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 122,
-        "title": "Battery 23",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 123,
-        "title": "Battery 24",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 124,
-        "title": "Battery 25",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 125,
-        "title": "Battery 26",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 126,
-        "title": "Battery 27",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 127,
-        "title": "Battery 28",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 128,
-        "title": "Battery 29",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 129,
-        "title": "Battery 30",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 130,
-        "title": "Battery 31",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 131,
-        "title": "Battery 32",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 132,
-        "title": "Battery 33",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 133,
-        "title": "Battery 34",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 134,
-        "title": "Battery 35",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 135,
-        "title": "Battery 36",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 136,
-        "title": "Battery 37",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 137,
-        "title": "Battery 38",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 138,
-        "title": "Battery 39",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 139,
-        "title": "Battery 40",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 140,
-        "title": "Battery 41",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 141,
-        "title": "Battery 42",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 142,
-        "title": "Battery 43",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 143,
-        "title": "Battery 44",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 144,
-        "title": "Battery 45",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 145,
-        "title": "Battery 46",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 146,
-        "title": "Battery 47",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 147,
-        "title": "Battery 48",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 148,
-        "title": "Battery 49",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 149,
-        "title": "Battery 50",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 150,
-        "title": "Battery 51",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 151,
-        "title": "Battery 52",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 152,
-        "title": "Battery 53",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 153,
-        "title": "Battery 54",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 154,
-        "title": "Battery 55",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 155,
-        "title": "Battery 56",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 100,
-        "title": "Battery 1",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 101,
-        "title": "Battery 2",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 102,
-        "title": "Battery 3",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 103,
-        "title": "Battery 4",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 104,
-        "title": "Battery 5",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 105,
-        "title": "Battery 6",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 106,
-        "title": "Battery 7",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 107,
-        "title": "Battery 8",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 108,
-        "title": "Battery 9",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 109,
-        "title": "Battery 10",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 110,
-        "title": "Battery 11",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 111,
-        "title": "Battery 12",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 112,
-        "title": "Battery 13",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 113,
-        "title": "Battery 14",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 114,
-        "title": "Battery 15",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 115,
-        "title": "Battery 16",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 116,
-        "title": "Battery 17",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 117,
-        "title": "Battery 18",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 118,
-        "title": "Battery 19",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 119,
-        "title": "Battery 20",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 120,
-        "title": "Battery 21",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 121,
-        "title": "Battery 22",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 122,
-        "title": "Battery 23",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 123,
-        "title": "Battery 24",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 124,
-        "title": "Battery 25",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 125,
-        "title": "Battery 26",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 126,
-        "title": "Battery 27",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 127,
-        "title": "Battery 28",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 128,
-        "title": "Battery 29",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 129,
-        "title": "Battery 30",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 130,
-        "title": "Battery 31",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 131,
-        "title": "Battery 32",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 132,
-        "title": "Battery 33",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 133,
-        "title": "Battery 34",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 134,
-        "title": "Battery 35",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 135,
-        "title": "Battery 36",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 136,
-        "title": "Battery 37",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 137,
-        "title": "Battery 38",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 138,
-        "title": "Battery 39",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 139,
-        "title": "Battery 40",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 140,
-        "title": "Battery 41",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 141,
-        "title": "Battery 42",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 142,
-        "title": "Battery 43",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 143,
-        "title": "Battery 44",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 144,
-        "title": "Battery 45",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 145,
-        "title": "Battery 46",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 146,
-        "title": "Battery 47",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 147,
-        "title": "Battery 48",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 148,
-        "title": "Battery 49",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 149,
-        "title": "Battery 50",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 150,
-        "title": "Battery 51",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 151,
-        "title": "Battery 52",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 152,
-        "title": "Battery 53",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 153,
-        "title": "Battery 54",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 154,
-        "title": "Battery 55",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
-    },
-{
-        "id": 155,
-        "title": "Battery 56",
-        "category": "battery",
-        "brand": "universal",
-        "description": "Battery for mobile devices",
-        "image": "https://via.placeholder.com/300x200/96A78D/FFFFFF?text=Battery",
-        "images": ["https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Battery+1", "https://via.placeholder.com/500x400/B6CEB4/FFFFFF?text=Battery+2"],
-        "compatibility": [],
-        "specifications": { "Capacity": "Unknown", "Voltage": "Unknown", "Type": "Unknown", "Cycle Life": "Unknown", "Protection": "Standard" },
-        "combos": []
+            "Chipset": "Universal",
+            "RAM": "8GB",
+            "Storage": "128GB",
+            "Processor": "Octa-core"
+        }
     }
 ];
 
@@ -1840,6 +212,31 @@ const partModal = document.getElementById('partModal');
 document.addEventListener('DOMContentLoaded', function() {
     renderResults();
     setupEventListeners();
+    
+    // Add model search report functionality
+    const modelSearchReportBtn = document.getElementById('searchModelReportBtn');
+    const modelSearchInput = document.getElementById('modelSearchInput');
+    
+    if (modelSearchReportBtn && modelSearchInput) {
+        modelSearchReportBtn.addEventListener('click', function() {
+            const modelName = modelSearchInput.value.trim();
+            if (modelName) {
+                showModelCompatibilityReport(modelName);
+            } else {
+                alert('Please enter a mobile model name');
+            }
+        });
+        
+        // Also allow Enter key to trigger search
+        modelSearchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const modelName = modelSearchInput.value.trim();
+                if (modelName) {
+                    showModelCompatibilityReport(modelName);
+                }
+            }
+        });
+    }
 });
 
 // Event listeners
@@ -1891,6 +288,9 @@ function applyFilters() {
         return matchesModel && matchesPart && matchesBrand;
     });
     
+    // Update results count with more detailed information
+    updateResultsCount();
+    
     currentPage = 1;
     renderResults();
 }
@@ -1903,6 +303,7 @@ function clearAllFilters() {
     filteredData = [...compatibilityData];
     currentPage = 1;
     renderResults();
+    updateResultsCount();
 }
 
 // Results rendering
@@ -1917,9 +318,11 @@ function renderResults() {
                 <i class="fas fa-search" style="font-size: 3rem; color: #a0aec0; margin-bottom: 1rem;"></i>
                 <h3>No compatibility data found</h3>
                 <p>Try adjusting your search terms or filters</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">Search tip: Try searching for specific models like "iPhone 13" or part types like "battery"</p>
             </div>
         `;
         resultsCount.textContent = "No results found";
+        updatePagination();
         return;
     }
     
@@ -1955,6 +358,10 @@ function createCompatibilityCard(item) {
                         ${item.compatibility.length > 4 ? `<span class="model-tag">+${item.compatibility.length - 4} more</span>` : ''}
                     </div>
                 </div>
+                <div class="compatibility-meta">
+                    <div class="compatibility-brand">Brand: ${item.brand.charAt(0).toUpperCase() + item.brand.slice(1)}</div>
+                    <div class="compatibility-count">${item.compatibility.length} compatible models</div>
+                </div>
                 <div class="compatibility-actions">
                     <button class="btn-secondary view-details">
                         <i class="fas fa-info-circle"></i> View Details
@@ -1972,7 +379,20 @@ function getCategoryName(category) {
         charging: 'Charging Port',
         cover: 'Back Cover',
         frame: 'Frame',
-        glass: 'Screen Guard'
+        glass: 'Screen Guard',
+        backpanel: 'Back Panel',
+        flex: 'Flex Cable',
+        speaker: 'Speaker',
+        microphone: 'Microphone',
+        camera: 'Camera Module',
+        button: 'Button',
+        connector: 'Connector',
+        motherboard: 'Motherboard',
+        vibrator: 'Vibrator',
+        antenna: 'Antenna',
+        simtray: 'SIM Tray',
+        housing: 'Housing',
+        bracket: 'Bracket'
     };
     return categories[category] || category;
 }
@@ -1982,7 +402,7 @@ function updatePagination() {
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     
     prevPageBtn.disabled = currentPage === 1;
-    nextPageBtn.disabled = currentPage === totalPages;
+    nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
     
     paginationNumbers.innerHTML = '';
     for (let i = 1; i <= totalPages; i++) {
@@ -2000,6 +420,10 @@ function changePage(page) {
         currentPage = page;
         renderResults();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Update URL to reflect current page
+        const url = new URL(window.location);
+        url.searchParams.set('page', page);
+        window.history.replaceState({}, '', url);
     }
 }
 
@@ -2017,10 +441,27 @@ function openPartModal(part) {
         `<img src="${img}" class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)">`
     ).join('');
     
-    // Set compatibility list
-    document.getElementById('modalCompatibility').innerHTML = part.compatibility.map(model => 
+    // Set compatibility list with search functionality
+    const compatibilityList = document.getElementById('modalCompatibility');
+    compatibilityList.innerHTML = part.compatibility.map(model => 
         `<span class="compatibility-tag">${model}</span>`
     ).join('');
+    
+    // Add model count
+    const modelCount = document.createElement('div');
+    modelCount.className = 'model-count';
+    modelCount.innerHTML = `<strong>Total Compatible Models:</strong> ${part.compatibility.length}`;
+    compatibilityList.parentNode.insertBefore(modelCount, compatibilityList.nextSibling);
+    
+    // Add a search by model feature in the modal
+    const searchByModelDiv = document.createElement('div');
+    searchByModelDiv.className = 'search-by-model';
+    searchByModelDiv.innerHTML = `
+        <h4>Search Compatible Models:</h4>
+        <input type="text" id="modelSearchInput" placeholder="Enter model name (e.g., iPhone 13)" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 4px;">
+        <button id="searchModelBtn" class="btn-secondary" style="margin-top: 0.5rem;">Find Parts for This Model</button>
+    `;
+    compatibilityList.parentNode.insertBefore(searchByModelDiv, modelCount.nextSibling);
     
     // Set specifications
     const specsList = document.getElementById('modalSpecifications');
@@ -2031,22 +472,25 @@ function openPartModal(part) {
         specsList.appendChild(li);
     }
     
-    // Set combos
-    const combosContainer = document.getElementById('modalCombos');
-    if (part.combos && part.combos.length > 0) {
-        combosContainer.innerHTML = part.combos.map(combo => `
-            <div class="combo-item">
-                <div class="combo-name">${combo.name}</div>
-                <div class="combo-models">For: ${combo.models.join(', ')}</div>
-                <div class="combo-discount">${combo.discount}</div>
-            </div>
-        `).join('');
-    } else {
-        combosContainer.innerHTML = '<p>No combo offers available for this part.</p>';
-    }
-    
     partModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    
+    // Update URL to reflect current part
+    const url = new URL(window.location);
+    url.searchParams.set('part', part.id);
+    window.history.replaceState({}, '', url);
+    
+    // Add event listener for the search button in modal
+    document.getElementById('searchModelBtn').addEventListener('click', function() {
+        const modelInput = document.getElementById('modelSearchInput').value;
+        if (modelInput) {
+            // Close modal and search for parts compatible with this model
+            closePartModal();
+            searchModel.value = modelInput;
+            currentFilters.model = modelInput.toLowerCase();
+            applyFilters();
+        }
+    });
 }
 
 function closePartModal() {
@@ -2058,6 +502,108 @@ function changeMainImage(src, thumbnail) {
     document.getElementById('modalMainImage').src = src;
     document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
     thumbnail.classList.add('active');
+}
+
+// Add a function to search by specific mobile model
+function searchByMobileModel(modelName) {
+    // Find all parts compatible with this model
+    const compatibleParts = compatibilityData.filter(part => 
+        part.compatibility.some(model => 
+            model.toLowerCase().includes(modelName.toLowerCase())
+        )
+    );
+    
+    return compatibleParts;
+}
+
+// Add a function to display all models compatible with a specific part
+function getCompatibleModels(partId) {
+    const part = compatibilityData.find(item => item.id === partId);
+    if (part) {
+        return part.compatibility;
+    }
+    return [];
+}
+
+// Add a function to create a model compatibility report
+function createModelCompatibilityReport(modelName) {
+    const report = {
+        modelName: modelName,
+        compatibleParts: [],
+        partCategories: {}
+    };
+    
+    // Find all parts compatible with this model
+    compatibilityData.forEach(part => {
+        if (part.compatibility.some(model => 
+            model.toLowerCase().includes(modelName.toLowerCase()))) {
+            report.compatibleParts.push(part);
+            
+            // Group by category
+            if (!report.partCategories[part.category]) {
+                report.partCategories[part.category] = [];
+            }
+            report.partCategories[part.category].push(part);
+        }
+    });
+    
+    return report;
+}
+
+// Enhanced modal handling for model reports
+function showModelCompatibilityReport(modelName) {
+    const report = createModelCompatibilityReport(modelName);
+    
+    // Update modal content to show report
+    document.getElementById('modalTitle').textContent = `Compatibility Report for ${modelName}`;
+    document.getElementById('modalCategory').textContent = "Model Compatibility Report";
+    document.getElementById('modalBrand').textContent = "";
+    document.getElementById('modalDescription').textContent = `This report shows all parts compatible with ${modelName}`;
+    document.getElementById('modalMainImage').src = "https://via.placeholder.com/500x400/96A78D/FFFFFF?text=Model+Compatibility";
+    
+    // Show compatible parts by category
+    const compatibilityList = document.getElementById('modalCompatibility');
+    let html = `<h3>Compatible Parts (${report.compatibleParts.length} found)</h3>`;
+    
+    if (report.compatibleParts.length === 0) {
+        html += `<p>No compatible parts found for this model. Try a different model name or check back later for updates.</p>`;
+    } else {
+        // Group parts by category
+        const partsByCategory = {};
+        report.compatibleParts.forEach(part => {
+            if (!partsByCategory[part.category]) {
+                partsByCategory[part.category] = [];
+            }
+            partsByCategory[part.category].push(part);
+        });
+        
+        // Display parts by category
+        for (const [category, parts] of Object.entries(partsByCategory)) {
+            html += `<h4>${getCategoryName(category)} (${parts.length})</h4>`;
+            html += `<div class="category-parts" style="margin-bottom: 20px;">`;
+            parts.forEach(part => {
+                html += `<div class="part-item" style="padding: 10px; margin: 5px 0; background: #f8f9fa; border-radius: 5px; border-left: 3px solid #96A78D;">
+                    <strong>${part.title}</strong> - ${part.brand.charAt(0).toUpperCase() + part.brand.slice(1)}
+                    <div style="font-size: 0.9rem; color: #666; margin-top: 5px;">${part.description.substring(0, 100)}...</div>
+                </div>`;
+            });
+            html += `</div>`;
+        }
+    }
+    
+    compatibilityList.innerHTML = html;
+    
+    // Hide specifications for model reports
+    document.getElementById('modalSpecifications').innerHTML = "";
+    
+    // Hide search by model div in modal for model reports
+    const searchByModelDiv = document.querySelector('.search-by-model');
+    if (searchByModelDiv) {
+        searchByModelDiv.style.display = 'none';
+    }
+    
+    partModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
 // Utility functions

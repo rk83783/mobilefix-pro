@@ -32,7 +32,7 @@
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid #96A78D;
+    border-left: 4px solid #1C352D;
 }
 
 .info-card h3 {
@@ -47,7 +47,7 @@
 }
 
 .info-card a {
-    color: #96A78D;
+    color: #1C352D;
     font-weight: 600;
     text-decoration: none;
 }
@@ -98,8 +98,8 @@
 .filter-group input:focus,
 .filter-group select:focus {
     outline: none;
-    border-color: #96A78D;
-    box-shadow: 0 0 0 2px rgba(150, 167, 141, 0.2);
+    border-color: #1C352D;
+    box-shadow: 0 0 0 2px rgba(28, 53, 45, 0.2);
 }
 
 .clear-filters {
@@ -198,7 +198,7 @@
 }
 
 .product-brand {
-    color: #96A78D;
+    color: #1C352D;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
@@ -226,7 +226,7 @@
 }
 
 .compatibility-tag {
-    background: #96A78D;
+    background: #1C352D;
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -240,7 +240,7 @@
 
 .view-details {
     flex: 1;
-    background: #96A78D;
+    background: #1C352D;
     color: white;
     border: none;
     padding: 0.75rem;
@@ -251,7 +251,7 @@
 }
 
 .view-details:hover {
-    background: #7d8f73;
+    background: #1C352D;
 }
 
 .add-to-cart {
@@ -278,7 +278,7 @@
 }
 
 .pagination-btn {
-    background: #96A78D;
+    background: #1C352D;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -288,7 +288,7 @@
 }
 
 .pagination-btn:hover:not(:disabled) {
-    background: #7d8f73;
+    background: #1C352D;
 }
 
 .pagination-btn:disabled {
@@ -310,9 +310,9 @@
 }
 
 .page-number.active {
-    background: #96A78D;
+    background: #1C352D;
     color: white;
-    border-color: #96A78D;
+    border-color: #1C352D;
 }
 
 .page-number:hover {
@@ -385,7 +385,7 @@
 }
 
 .thumbnail.active {
-    border-color: #96A78D;
+    border-color: #1C352D;
 }
 
 .product-details h2 {
@@ -405,7 +405,7 @@
 }
 
 .product-brand {
-    color: #96A78D;
+    color: #1C352D;
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -431,7 +431,7 @@
 }
 
 .compatibility-item {
-    background: #96A78D;
+    background: #1C352D;
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -464,7 +464,7 @@
     background: #f8f9fa;
     padding: 1rem;
     border-radius: 5px;
-    border-left: 3px solid #96A78D;
+    border-left: 3px solid #1C352D;
 }
 
 .combo-item h5 {
@@ -546,7 +546,7 @@
 }
 
 .upload-area {
-    border: 2px dashed #96A78D;
+    border: 2px dashed #1C352D;
     border-radius: 10px;
     padding: 2rem;
     text-align: center;
@@ -560,13 +560,13 @@
 
 .upload-area:hover,
 .upload-area.drag-over {
-    border-color: #7d8f73;
-    background-color: rgba(150, 167, 141, 0.05);
+    border-color: #1C352D;
+    background-color: rgba(28, 53, 45, 0.05);
 }
 
 .upload-icon {
     font-size: 3rem;
-    color: #96A78D;
+    color: #1C352D;
 }
 
 .file-preview {
@@ -645,7 +645,7 @@
 
 .progress-fill {
     height: 100%;
-    background: #96A78D;
+    background: #1C352D;
     width: 0%;
     transition: width 0.3s;
 }
@@ -695,7 +695,7 @@
 }
 
 .btn-primary {
-    background: #96A78D;
+    background: #1C352D;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -707,7 +707,7 @@
 }
 
 .btn-primary:hover:not(:disabled) {
-    background: #7d8f73;
+    background: #1C352D;
 }
 
 .btn-primary:disabled {

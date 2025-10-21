@@ -1,14 +1,26 @@
 # MobileFix Pro - Mobile Repair Technician Compatibility Reference
 
 ## Overview
-MobileFix Pro is a comprehensive technical reference tool designed specifically for mobile repair technicians. It provides an extensive database of part compatibility information for various mobile devices, helping technicians quickly identify which parts work with which models.
+MobileFix Pro is a comprehensive technical reference tool designed specifically for mobile repair technicians. **This website is for INFORMATION PURPOSES ONLY and does not sell any parts.**
+
+It provides an extensive database of part compatibility information for various mobile devices, helping technicians quickly identify which parts work with which models.
+
+## Important Notice
+**THIS IS AN INFORMATION-ONLY WEBSITE**
+- No parts are sold through this platform
+- No shopping cart functionality
+- No payment processing
+- No order management
+- This is purely a reference tool for mobile repair professionals
 
 ## Features
 - **Compatibility Database**: Extensive database of mobile parts with compatibility information
 - **Search Functionality**: Search by model, part type, or brand
 - **Detailed Part Information**: Specifications, images, and compatibility details
+- **Model-Based Search**: Find all parts compatible with a specific mobile model
+- **Part-Based Search**: Find all models compatible with a specific part
 - **Combo Support**: Common part combinations for popular repairs
-- **Excel Upload**: Upload battery compatibility data from Excel files
+- **Excel Upload**: Upload battery compatibility data from Excel files (Admin only)
 - **Responsive Design**: Works on desktop and mobile devices
 - **Modern UI**: Clean, professional interface with intuitive navigation
 
@@ -22,11 +34,9 @@ MobileFix Pro is a comprehensive technical reference tool designed specifically 
 
 ## Key Pages
 1. **Home** - Overview of the platform and features
-2. **Products** - Browse available parts by category
-3. **Compatibility** - Search and filter part compatibility
-4. **Upload** - Upload Excel files to add battery data
-5. **Contact** - Contact information and support
-6. **Admin** - Administrative functions
+2. **Compatibility** - Search and filter part compatibility (Main feature)
+3. **Upload** - Upload Excel files to add battery data (Admin only)
+4. **Contact** - Contact information and support
 
 ## Compatibility Database
 The compatibility database includes information for:
@@ -36,8 +46,34 @@ The compatibility database includes information for:
 - Back Covers (Plastic, Glass, TPU)
 - Frames (Metal, Plastic)
 - Glass Guards (Tempered, Privacy)
+- Flex Cables
+- Speakers and Microphones
+- Camera Modules
+- Buttons and Connectors
+- And many more...
 
-## Excel Upload Functionality
+## How to Use This Reference Tool
+
+### Searching for Parts
+1. Visit the **Compatibility** page
+2. Use the search filters:
+   - Search by Model: Enter a specific mobile model (e.g., "iPhone 13 Pro")
+   - Search by Part: Enter a part type (e.g., "Battery", "Display")
+   - Filter by Brand: Select a specific manufacturer
+3. Browse the results to find compatible parts
+
+### Finding Parts for a Specific Model
+1. On the Compatibility page, use the "Find Parts for a Specific Model" section
+2. Enter the mobile model name (e.g., "Samsung Galaxy S21")
+3. View a comprehensive report of all parts compatible with that model
+
+### Viewing Part Details
+1. Click on any part card to open the detailed view
+2. See all compatible models for that part
+3. View detailed specifications
+4. Check related part combinations
+
+## Excel Upload Functionality (Admin Only)
 Administrators can upload battery compatibility data using Excel files:
 
 ### How to Use
@@ -65,8 +101,8 @@ The system includes a Python script (`process_battery_excel.py`) that:
 ## Getting Started
 1. Clone the repository
 2. Open `index.html` in a web browser
-3. Navigate through the site to explore features
-4. Use the "Upload" page to add new battery data
+3. Navigate to the Compatibility page to start searching
+4. Use the search filters to find parts or models
 
 ## Deployment
 The application can be deployed to any static hosting service. For Vercel deployment:

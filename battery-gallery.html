@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Battery Compatibility Gallery - MobileFix Pro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="compatibility.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f4f7fb; --card:#ffffff; --muted:#6b7280; --accent:#1C352D; --text:#0b1220;
+      --sidebar:#0f1724;
+    }
+    [data-theme="dark"]{
+      --bg:#0b1220; --card:#061220; --muted:#98a0b3; --accent:#4da3ff; --text:#eaf2ff; --sidebar:#041227;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter, system-ui, Arial, sans-serif;
+      background:linear-gradient(180deg,var(--bg), rgba(255,255,255,0.02));
+      color:var(--text); min-height:100vh;
+      display:flex; gap:20px;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width:220px; background:var(--sidebar); color:var(--text);
+      padding:18px; border-top-right-radius:14px; border-bottom-right-radius:14px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.25); position:sticky; top:20px; height:calc(100vh - 40px);
+    }
+    .logo{ font-weight:700; color:var(--accent); font-size:16px; margin-bottom:14px}
+    .side-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px}
+    .side-list button{
+      background:transparent; border:0; color:var(--text); text-align:left; padding:10px 8px;
+      border-radius:8px; cursor:pointer; font-weight:600;
+    }
+    .side-list button.active{ background:rgba(255,255,255,0.03); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02) }
+
+    /* Main container */
+    .main{
+      flex:1; padding:20px 26px; min-width:0;
+    }
+
+    /* Header + brand bar + search */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px;
+    }
+    .page-title{ font-size:20px; font-weight:700; display:flex; gap:8px; align-items:center}
+    .brand-bar{
+      display:flex; gap:8px; overflow:auto; padding:8px 0; margin:12px 0 8px 0;
+    }
+    .brand-btn{
+      background:transparent; border:1px solid rgba(0,0,0,0.06); padding:8px 12px; border-radius:999px; cursor:pointer;
+      font-weight:600; white-space:nowrap;
+    }
+    .brand-btn.active{ background:var(--accent); color:#fff; border-color:transparent; box-shadow:0 6px 18px rgba(28,53,45,0.12) }
+
+    .controls{
+      display:flex; gap:10px; align-items:center;
+    }
+    .search{
+      width:480px; max-width:52vw;
+      padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.08);
+      font-size:14px;
+    }
+
+    .toggle{
+      display:flex; gap:8px; align-items:center; padding:6px; background:var(--card); border-radius:10px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+    }
+    .small{
+      font-size:13px; color:var(--muted);
+    }
+
+    /* Cards grid */
+    .grid{
+      display:grid; gap:14px; margin-top:12px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    .card{
+      background:var(--card); border-radius:12px; padding:10px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+      display:flex; flex-direction:column; gap:8px; align-items:center; position:relative;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{ transform:translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.12) }
+    .battery-tag{
+      position:absolute; left:10px; top:10px; background:rgba(0,0,0,0.06); padding:6px 8px; border-radius:8px; font-weight:700;
+      font-size:12px;
+    }
+    .card img{ width:100%; height:140px; object-fit:contain; border-radius:10px; background:linear-gradient(180deg,#fff,#f6f9ff) }
+    .model-grid{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; width:100%;}
+    .model-box{
+      border-radius:8px; padding:6px 8px; min-width:86px; text-align:center; font-weight:600; font-size:13px;
+      background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.0));
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.02);
+    }
+
+    /* footer small */
+    .help{ margin-top:12px; color:var(--muted); font-size:13px }
+
+    /* responsive tweaks */
+    @media (max-width:900px){
+      .sidebar{ display:none }
+      .search{ width:100% }
+      .topbar{ flex-direction:column; align-items:flex-start; gap:8px }
+    }
+    
+    /* Back to home button */
+    .back-btn {
+      background: #1C352D;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .back-btn:hover {
+      background: #1C352D;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-mobile-alt"></i>
+          <span>MobileFix Pro</span>
+        </div>
+        
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="compatibility.html" class="nav-link">Compatibility</a>
+          <a href="battery-gallery.html" class="nav-link active">Battery Gallery</a>
+          <a href="upload.html" class="nav-link">Upload</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        
+        <div class="nav-actions">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main content below header -->
+  <div style="margin-top: 80px; display: flex; gap: 20px;">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-hidden="false">
+      <div class="logo">📱 Universal Hardware DB</div>
+      <p style="color:var(--muted); font-size:13px; margin-bottom:12px">Part Types:</p>
+      <ul class="side-list">
+        <li><button class="active">🔋 Battery</button></li>
+        <li><button>📱 Display</button></li>
+        <li><button>📷 Camera</button></li>
+        <li><button>🔈 Speaker</button></li>
+        <li><button>⚡ Charging Board</button></li>
+        <li><button>🎤 Mic</button></li>
+        <li><button>🧠 Motherboard</button></li>
+        <li><button>🖐️ Fingerprint</button></li>
+      </ul>
+      <p class="help">Tip: Replace placeholder images with real image URLs in the data object in the script.</p>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      
+      <div class="topbar">
+        <div>
+          <div class="page-title">📋 Battery Compatibility — Gallery</div>
+          <div style="color:var(--muted); font-size:13px; margin-top:6px">Filter by brand or search model / battery code</div>
+        </div>
+
+        <div class="controls">
+          <input id="searchInput" class="search" placeholder="Search model name or battery code (e.g., A51 or BLP577)" />
+          <div class="toggle">
+            <div class="small">Theme</div>
+            <button id="themeBtn" style="padding:6px 10px; border-radius:8px; border:0; cursor:pointer">🌙</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand index -->
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+        <div class="brand-bar" id="brandBar" aria-label="Brand index"></div>
+        <div style="color:var(--muted); font-size:13px">Showing <span id="count">0</span> cards</div>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid" id="grid"></div>
+
+      <div style="margin-top:16px; color:var(--muted); font-size:13px">Dataset is stored in JS object `data`; use it as backend seed.</div>
+    </main>
+  </div>
+
+  <script>
+    /***********************
+     * Demo DATA object
+     * Add all brand/model/image mapping here.
+     * For each battery entry: battery, brand, models: [ {name, image} ]
+     * Replace placeholder URLs with real image URLs later.
+     ***********************/
+    const data = [
+      {
+        battery: "BLP577",
+        brand: "Oppo",
+        models: [
+          { name: "Oppo A51", image: "https://via.placeholder.com/360x200?text=Oppo+A51" },
+          { name: "Oppo A51k", image: "https://via.placeholder.com/360x200?text=Oppo+A51k" },
+          { name: "Oppo A51t", image: "https://via.placeholder.com/360x200?text=Oppo+A51t" },
+          { name: "Oppo R3", image: "https://via.placeholder.com/360x200?text=Oppo+R3" }
+        ]
+      },
+      {
+        battery: "BLP607",
+        brand: "Oppo / OnePlus",
+        models: [
+          { name: "Oppo A30", image: "https://via.placeholder.com/360x200?text=Oppo+A30" },
+          { name: "OnePlus X", image: "https://via.placeholder.com/360x200?text=OnePlus+X" }
+        ]
+      },
+      {
+        battery: "BLP673",
+        brand: "Realme / Oppo",
+        models: [
+          { name: "Oppo A3s", image: "https://via.placeholder.com/360x200?text=Oppo+A3s" },
+          { name: "Oppo A5s", image: "https://via.placeholder.com/360x200?text=Oppo+A5s" },
+          { name: "Realme 2", image: "https://via.placeholder.com/360x200?text=Realme+2" },
+          { name: "Realme C1", image: "https://via.placeholder.com/360x200?text=Realme+C1" }
+        ]
+      },
+      {
+        battery: "BLP681",
+        brand: "Oppo",
+        models: [
+          { name: "Oppo F9", image: "https://via.placeholder.com/360x200?text=Oppo+F9" },
+          { name: "Oppo R17", image: "https://via.placeholder.com/360x200?text=Oppo+R17" }
+        ]
+      },
+      {
+        battery: "BLP683",
+        brand: "Realme",
+        models: [
+          { name: "Realme U1", image: "https://via.placeholder.com/360x200?text=Realme+U1" },
+          { name: "Realme 2 Pro", image: "https://via.placeholder.com/360x200?text=Realme+2+Pro" }
+        ]
+      },
+      {
+        battery: "BLP693",
+        brand: "Realme",
+        models: [
+          { name: "Realme 3", image: "https://via.placeholder.com/360x200?text=Realme+3" },
+          { name: "Realme 3i", image: "https://via.placeholder.com/360x200?text=Realme+3i" }
+        ]
+      },
+      {
+        battery: "BLP707",
+        brand: "Oppo / Realme",
+        models: [
+          { name: "Oppo F7", image: "https://via.placeholder.com/360x200?text=Oppo+F7" },
+          { name: "Realme 1", image: "https://via.placeholder.com/360x200?text=Realme+1" }
+        ]
+      },
+      {
+        battery: "BLP715",
+        brand: "Realme / Oppo",
+        models: [
+          { name: "Realme X", image: "https://via.placeholder.com/360x200?text=Realme+X" },
+          { name: "Oppo Reno", image: "https://via.placeholder.com/360x200?text=Oppo+Reno" }
+        ]
+      },
+      {
+        battery: "BLP727 / BLP729",
+        brand: "Realme / Oppo",
+        models: [
+          { name: "Realme 5", image: "https://via.placeholder.com/360x200?text=Realme+5" },
+          { name: "Realme C11", image: "https://via.placeholder.com/360x200?text=Realme+C11" },
+          { name: "Realme C3", image: "https://via.placeholder.com/360x200?text=Realme+C3" }
+        ]
+      },
+      {
+        battery: "BLP793",
+        brand: "Realme",
+        models: [
+          { name: "Realme C12", image: "https://via.placeholder.com/360x200?text=Realme+C12" },
+          { name: "Realme C15", image: "https://via.placeholder.com/360x200?text=Realme+C15" },
+          { name: "Realme C25", image: "https://via.placeholder.com/360x200?text=Realme+C25" }
+        ]
+      },
+      {
+        battery: "BLP799",
+        brand: "Realme",
+        models: [
+          { name: "Realme 7 Pro", image: "https://via.placeholder.com/360x200?text=Realme+7+Pro" },
+          { name: "Realme X7 Pro", image: "https://via.placeholder.com/360x200?text=Realme+X7+Pro" }
+        ]
+      },
+      {
+        battery: "BLP803 / BLP805",
+        brand: "Realme / Oppo",
+        models: [
+          { name: "Realme 8 5G", image: "https://via.placeholder.com/360x200?text=Realme+8+5G" },
+          { name: "Oppo A53", image: "https://via.placeholder.com/360x200?text=Oppo+A53" }
+        ]
+      },
+      {
+        battery: "BLP877",
+        brand: "Realme",
+        models: [
+          { name: "Realme C31", image: "https://via.placeholder.com/360x200?text=Realme+C31" },
+          { name: "Realme C35", image: "https://via.placeholder.com/360x200?text=Realme+C35" }
+        ]
+      },
+      {
+        battery: "BLP923",
+        brand: "Oppo",
+        models: [
+          { name: "Oppo A57", image: "https://via.placeholder.com/360x200?text=Oppo+A57" },
+          { name: "Oppo A77", image: "https://via.placeholder.com/360x200?text=Oppo+A77" }
+        ]
+      }
+    ];
+
+    /* Build brand list from data */
+    const brands = Array.from(new Set(data.map(d => d.brand))).sort();
+
+    const brandBar = document.getElementById('brandBar');
+    const grid = document.getElementById('grid');
+    const countEl = document.getElementById('count');
+    const searchInput = document.getElementById('searchInput');
+    const themeBtn = document.getElementById('themeBtn');
+
+    function buildBrandButtons(){
+      // "All" button
+      const allBtn = document.createElement('button');
+      allBtn.className = 'brand-btn active';
+      allBtn.textContent = 'All';
+      allBtn.onclick = () => { 
+        document.querySelectorAll('.brand-btn').forEach(b=>b.classList.remove('active')); 
+        allBtn.classList.add('active');
+        renderGrid(data);
+      };
+      brandBar.appendChild(allBtn);
+
+      // Brand buttons
+      brands.forEach(brand => {
+        const btn = document.createElement('button');
+        btn.className = 'brand-btn';
+        btn.textContent = brand;
+        btn.onclick = () => {
+          document.querySelectorAll('.brand-btn').forEach(b=>b.classList.remove('active'));
+          btn.classList.add('active');
+          const filtered = data.filter(d => d.brand === brand);
+          renderGrid(filtered);
+        };
+        brandBar.appendChild(btn);
+      });
+    }
+
+    function renderGrid(items){
+      grid.innerHTML = '';
+      countEl.textContent = items.length;
+      
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        // Create model grid
+        let modelGrid = '';
+        item.models.forEach(model => {
+          modelGrid += `<div class="model-box">${model.name}</div>`;
+        });
+        
+        card.innerHTML = `
+          <div class="battery-tag">${item.battery}</div>
+          <img src="${item.models[0]?.image || 'https://via.placeholder.com/360x200?text=No+Image'}" alt="${item.battery}">
+          <div class="model-grid">${modelGrid}</div>
+        `;
+        
+        grid.appendChild(card);
+      });
+    }
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      if (!term) {
+        renderGrid(data);
+        return;
+      }
+      
+      const filtered = data.filter(item => 
+        item.battery.toLowerCase().includes(term) || 
+        item.brand.toLowerCase().includes(term) ||
+        item.models.some(model => model.name.toLowerCase().includes(term))
+      );
+      
+      renderGrid(filtered);
+    });
+
+    // Theme toggle
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      if (currentTheme === 'light') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeBtn.textContent = '☀️';
+      } else {
+        document.body.setAttribute('data-theme', 'light');
+        themeBtn.textContent = '🌙';
+      }
+    });
+
+    // Initialize
+    buildBrandButtons();
+    renderGrid(data);
+  </script>
+</body>
+</html>
